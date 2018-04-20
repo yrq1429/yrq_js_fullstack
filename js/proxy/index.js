@@ -75,7 +75,7 @@ var xiaoxue ={
         // 实现了同样的收花方法，接口
         // 小雪和小美都实现了相同的 接口
         // 实现了相同的接口就可以互换对象
-        // xiaomei.receiveFlower(flower,name);
+        // xiaomei.receiveFlower(flower,name)
     }
 
 //空的对象自变量
