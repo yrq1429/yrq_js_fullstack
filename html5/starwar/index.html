@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 星球大战</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        img{
+            width: 100%;
+
+        }
+        body{
+            /* 银河系 */
+            background: url(images/bg.jpg);
+        }
+        .starwars-demo{
+            /* em是一个相对单位，相对于自身的font-size 
+            px 是一个绝对单位 */
+            /* body 默认字体大小16px */
+            /* 为什么要用相对单位？   适配all */
+            /* 网页布局，正常模式基于文档流的布局 （从左到右，从上到下，块级元素，行内元素）*/
+            /* 定位（position）  破坏文档流， */
+            /* 浮动布局 float：left/right  pc端常用的布局方式 */
+            /* flex 弹性布局  等分，及父子关系的布局 */
+            /* grid 布局 九宫格 */
+            /* background: red; */
+            height: 17em;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%,-50%);
+            top:53%;
+            width: 34em;
+            /* 是3D的 */
+
+            transform-style: preserve-3d;
+            perspective: 800px;
+
+            
+        }
+        .star, .wars{
+            position: absolute;
+
+        }
+        .star{
+            top:-0.75em;
+            animation: star 10s ease-out infinite;
+        }
+        @keyframes star {
+            0%{
+                opacity: 0;
+                transform: scale(1.5);
+            }
+            20%{
+                opacity: 1;
+            }
+            89%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(-400em);            }
+        }
+        .wars{
+            bottom: -0.5em;
+            animation: wars 10s ease-out infinite;
+
+        }
+        @keyframes wars {
+             0%{
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            20%{
+                opacity: 1;
+            }
+            89%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(400em);       
+            }
+
+        }
+        .byline{
+            position: absolute;
+            color: #fff;
+            font-family: Lato;
+            font-style: 2.25em;
+            left: -2em;
+            right: -2em;
+            top: 44%;
+            letter-spacing: .4em;
+            text-transform: uppercase;
+        }
+        .byline span{
+            display: inline-block;
+        }
+        .byline {
+            animation: move-byline 10s linear infinite;
+        }
+        .byline span{
+            animation: spin-letter 10s linear infinite;
+        }
+        @keyframes move-byline{
+            0%{
+                transform: translateZ(5em);
+            }
+            100%{
+                transform: translateZ(0);
+            }
+        }
+        @keyframes spin-letter {
+            0%,100%{
+                opacity: 0;
+                transform: rotateY(90deg);
+            }
+            30%{
+                opacity: 1;
+            }
+            70%,80%{
+                transform: rotateY(0);
+                opacity: 1;
+            }
+            88%,100%{
+                opacity: 0;
+            }
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="starwars-demo">
+        <img src="./images/star.svg" alt="" class="star">
+        <img src="./images/wars.svg" alt="" class="wars">
+        <h2 class="byline">
+            <!-- The Force Awakens -->
+            <span>T</span>
+            <span>h</span>
+            <span>e</span>
+
+            <span>F</span>
+            <span>o</span>
+            <span>r</span>
+            <span>c</span>
+            <span>e</span>
+
+            <span>A</span>
+            <span>w</span>
+            <span>a</span>
+            <span>k</span>
+            <span>e</span>
+            <span>n</span>
+            <span>s</span>
+            
+        </h2>
+    </div>
+</body>
+</html>
