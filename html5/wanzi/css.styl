@@ -1,0 +1,333 @@
+base-color= #152131
+
+body 
+    font-size 20px
+body,div
+    margin 0
+    padding 0
+    background #ffef5e
+
+.border
+    border 1px solid base-color
+
+.main
+    position relative
+    width 700px
+    margin 50px auto
+    // height 300px
+    // background #112233
+
+.wanzi
+    position absolute
+    top 250px
+    left 100px
+    z-index 10
+    //stylus可缩进
+
+    .hairs
+        background-color base-color
+        width 190px
+        height 250px
+        left -30px
+        top -50px
+        position absolute
+        border-radius 50% 50% 0 0
+        overflow hidden
+
+
+        &:after
+            content ''  //关键元素
+            position absolute
+            width 300px
+            height 200px
+            background #ffef5e
+            top 120px
+
+        .hair
+            width 35px
+            height 45px
+            background base-color
+            position absolute
+            z-index 1
+            transform rotate(70deg) scale(1) skew(44deg) translate(8px)//重点
+            //&运算符 1101
+            &.hair1
+                top 17px
+                left 27px
+            &.hair2
+                top 8px
+                left 52px
+            &.hair3
+                top 4px
+                left 73px
+            &.hair4
+                top 0
+                left 90px
+            &.hair5
+                top 4px
+                left 108px
+            &.hair6
+                top 8px
+                left 125px
+            &.hair7
+                top 17px
+                right 17px
+
+
+
+
+
+    .face
+        background #fbdac7
+        width 130px
+        height 100px
+        position absolute
+        top 0
+        border-radius 20px 20px 50px 50px
+        .brow
+            width 42px
+            height 2px
+            background: base-color
+            position absolute
+            top 26px
+            border-radius 50%
+            &.left-brow
+                left 18px
+                transform rotate(-10deg)
+            &.right-brow
+                right 14px
+                transform rotate(10deg)
+        .eye
+            width 14px
+            height 14px
+            position absolute
+            top 40px
+            background #000000
+            border-radius 50%
+            z-index 2
+
+            &.left-eye
+                left 30%
+            &.right-eye
+                right 30%
+                //#d96b6e嘴巴
+                // #f79c99腮红
+        .blusher
+            width 14px
+            height 14px
+            background #f79c99
+            z-index 2
+            border-radius 50%
+            position absolute
+            top 70px
+            // left 10px
+            &.left-blusher
+                left 10px
+            &.right-blusher
+                right 10px
+
+        .mouth
+            width 25px
+            height 10px
+            background #d96b6e
+            position absolute
+            top 72px
+            left 40%
+            border-radius 0 0 20px 20px 
+        .ear
+            height 20px
+            width 10px
+            background #f79c99
+            position absolute
+            top 29px
+            // left -12px
+            border-radius 10px 0 0 20px
+            &.left-ear
+                left -11px
+            &.right-ear
+                transform rotateY(180deg)
+                right -11px
+    .neck
+        height 10px
+        width 14px
+        border 1px solid #fbdac7
+        background: #f79c99
+        position absolute
+        top 100px
+        left 55px   
+    .clothes
+        width 100px
+        height 120px
+        background white
+        border 1px solid #000  
+        position absolute
+        top 110px
+        left 15px 
+        z-index 2
+        overflow hidden
+        border-radius 30% 30% 0% 0%
+        .collar
+            width 20px
+            height 10px
+            background white
+            border 1px solid #000
+            position absolute
+            &.left-collar
+                float left
+                left 25px
+                top 1px
+                transform rotate(50deg)
+            &.right-collar
+                float: right
+                right 25px
+                top 1px
+                transform rotate(-50deg)
+        .strap
+            height 120px
+            width 10px
+            background #f7003b
+            position absolute
+            z-index -1
+            &.left-straps
+                left 25px
+            &.right-straps
+                right 25px
+    .up-skirt
+        width 102px
+        height 15px
+        background #f7003b
+        position absolute
+        top 232px
+        left 15px
+    .skirt
+        background #ed023a
+        position: absolute
+        background:  none
+        border-color: #e9003a transparent
+        border-image: none
+        border-style: solid
+        border-width: 0px 30px 50px
+        // height: 0
+        left: -15px
+        position: absolute
+        top: 247px
+        width: 102px
+        z-index: 3
+        border-radius: 0 0 50% 50%
+        .line
+            width 1px
+            height 35px
+            position absolute
+            background #000
+            top 10px
+            transform-origin:0 0
+            &.line1
+                left 15px
+                transform:rotate(20deg)
+            &.line2
+                left 35px
+                transform rotate(10deg)
+            &.line3
+                left:50px
+            &.line4
+                right 30px
+                transform rotate(-10deg)
+            &.line5
+                right 10px
+                transform rotate(-20deg) 
+    .arm
+        width 190px
+        height 130px
+        background-color #fff
+        position absolute
+        top 112px
+        left -28px
+        border-radius 50% 50%
+        .arm1
+            width 150px
+            height 100px
+            background-color #ffef5e
+            position absolute
+            top 16px
+            left 20px
+            border-radius 50% 50%
+    .leg
+        width 15px
+        height 100px
+        background-color #fbdac7
+        position absolute
+        border 1px solid #000000
+        top 280px
+        z-index 2
+        &.left-leg
+            left 35px
+        &.right-leg
+            left 85px
+    .sock
+        width 15px
+        height 20px
+        background #fff
+        position absolute
+        border-left 1px solid #000
+        border-right: 1px solid #000
+        border-top 1px solid #000
+        border-bottom 1px solid #fff
+        z-index 4
+        &.left-sock
+            left 35px
+            top 365px
+        &.right-sock   
+            // transform rotate(20deg)      
+            left 85px
+            top 365px    
+    .w
+        width 35px
+        height 17px
+        background #fff
+        position absolute
+        top 378px
+        left 18px
+        border-radius 50%
+        transform rotate(-30deg)
+        z-index 2
+        &.left-wanw
+            top 383px
+            left 16px
+            background-color #fff
+            border-radius 50% 0 0 50%
+            z-index 3
+        &.right-wanw
+            top 383px
+            left 86px
+            background-color #fff
+            border-radius 0 50% 50% 0
+            transform rotate(30deg)
+            z-index 3
+    .shoes
+        width 50px
+        height 23px
+        background #ed023a
+        position absolute
+        top 378px
+        left 18px
+        border-radius 50%
+        transform rotate(-30deg)
+        z-index 2
+        &.left-shoes
+            top 383px
+            left 6px
+            border-radius 50% 0 0 50%
+        &.right-shoes
+            top 383px
+            left 82px
+            border-radius 0 50% 50% 0
+            transform rotate(30deg)
+    &:after
+            content: ''
+            width 33px
+            height 30px  
+            position absolute
+            background #ffef5e
+            top 360px
+            left 52px   
+            z-index 10 
