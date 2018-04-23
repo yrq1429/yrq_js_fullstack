@@ -32,7 +32,7 @@ Bicycle.prototype= {
 
         switch (model) {
             case 'Giant':  
-                bicycle=new Giant();
+                bicycle=new Giant();//将bicycle实例化一个Giant对象
             break;
             case 'The Speed Ster':
                 bicycle = new Speedster();
@@ -49,7 +49,7 @@ Bicycle.prototype= {
     }
 }
 
-var bicycle = new Bicycle('永久');
+var bicycle = new Bicycle('');
 
 
 

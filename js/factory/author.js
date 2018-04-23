@@ -8,7 +8,7 @@ Person.prototype.getName=function(){
 }
 
 // IT工程师  extend Person
-function Coder(name,languages) {
+function Coder(name,languages) {    
     // call ?
     Person.call(this,name);
     // 父类没有的可以加
