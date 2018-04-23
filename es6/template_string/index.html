@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template String!</title>
+</head>
+<body>
+    <p>
+        es6 更简洁，高效，优雅，面向未来
+
+    </p>
+    <ul id="dogs">
+
+    </ul>
+    <script>
+        /*
+        能用const就用const
+        */
+        const name='张双双';
+        const age=18;
+        // ``字符串模板 
+        const sentence=`My Friend ${name} is ${age} years old ! Always!`;
+
+        console.log(sentence);
+        
+        const dogs=[
+            {name :'Snickers',age:2},
+            {name : 'hugo', age:8},
+            {name : 'Sunny',age:1}
+        ];
+        // 动态显示HTML dom DHTML
+        // 字符串模板让HTML模板组装变得很优雅
+        
+
+        // js是弱类型语言，在变量面前第一个字母加类型描述，有利于代码正确性和可读性
+        const oUL=document.querySelector('#dogs');
+        /*
+        *getOneDogHtml 返回单条狗的HTML
+        *params:dog 类型 json key {name age}
+        *return li结点
+        *
+        */
+
+    /*  function getOneDogHtml(dog){
+            const oLi=document.createElement('li');
+            const strDog=`My Dog ${dog.name} is ${dog.age} years old`;
+            oLi.appendChild(document.createTextNode(strDog));
+            return oLi;
+        }
+        const oUL = document.querySelector('#dogs');
+            for (let i = 0; i < dogs.length; i++) {
+                // 创建一个li html标签可以通过js 创建
+                // 1 createElement 2 appendChild 挂上去
+                // const oLi = document.createElement('li');
+                // const strDog =
+                //         `${dogs[i].name} is ${dogs[i].age} years old!`
+                // oLi.appendChild(
+                //     document.createTextNode(strDog)
+                // );
+                oUL.appendChild(getOneDogHtml(
+                    dogs[i]
+                ));
+            }
+*/
+// 字符串支持换行，有点像html
+
+
+const markup=`
+    ${
+        dogs.map(dog =>`
+            <li>
+                ${dog.name} is ${dog.age * 7}
+            </li>
+        `).join('')
+    }
+`
+
+oUL.innerHTML=markup;
+
+
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>
