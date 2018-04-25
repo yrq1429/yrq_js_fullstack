@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用bootatrap 做网页布局  so easy！</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 主体布局样式 */
+        .main>div{
+            height: 200px;
+            background: red;
+        }
+        .main>div:nth-child(1){
+            background-color: green;
+        }
+        .main>div:nth-child(3){
+            background-color: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 网页经典三栏式布局
+    3:7:2  每列的高度是200px,颜色 红：黄：绿==>业务样式
+    框架样式，bootstrap 布局系统 layout
+    -->
+    <div class="container">
+        <div class="row main">
+            <div class="col-md-3"></div>
+            <div class="col-md-7"></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</body>
+</html>
