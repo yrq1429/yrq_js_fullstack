@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebGL 立方体</title>
+    <script src="https://cdn.bootcss.com/three.js/92/three.min.js"></script>
+    <style>
+        #webglcanvas {
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <canvas id="webglcanvas" style="border:none;
+   background-color:#000000" width="500" height="500"></canvas>
+
+    <script>
+        // js 事件 js 不是封装的， 而是当前页面逻辑代码
+        // 一般在document ready 再发生
+        // 让html ,css 先做， 渲染一棵dom树
+        // document ready 事件 $()
+        // 早于window.onload触发， 生命周期
+        // 全局变量 作用域 scope
+
+        // 3D生产过程
+        // scene 场景 new THREE.Scene
+        // add 过程，将camera，3dObject 光源，一切加入场景。
+        // 生成 renderer 渲染器，制片人，.render(scene,camera)加入进去;
+        // 可以不停的去刷新显示帧，动画，一帧一帧的，
+
+        // THREE.API 
+
+
+        var renderer;
+        var scene;
+        var camera;
+        var cube;
+        $(function () {
+            var canvas =
+                document.getElementById('webglcanvas');
+            // canvas 2D画布  3D 渲染
+            // render 渲染器, 3D世界很复杂，
+            // 模型，  渲染
+            // THREE 提供了3D的绘制API
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                antialias: true //抗锯齿
+            })
+            // 设置渲染器大小
+            renderer.setSize(canvas.width,canvas.height);
+            scene = new THREE.Scene
+            camera = new THREE.PerspectiveCamera(45,canvas.width/canvas.height,1,4000);
+            var light = new THREE.DirectionalLight(0xffffff,1.5);
+            light.position.set(1,0,1);
+            scene.add(light);
+
+            // 主角 object3D
+            // geometry 3D物体有形状
+            // material 材质
+            var mapUrl='./webgl-logo-256.jpg';
+            var map = THREE.ImageUtils.loadTexture(mapUrl);
+            var material = new THREE.MeshPhongMaterial({map:map});
+            var geometry = new THREE.CubeGeometry(3,3,3);
+            cube = new THREE.Mesh(geometry,material);
+            cube.position.z=-8;
+            cube.rotation.x=Math.PI/5;
+            cube.rotation.y=Math.PI/5;
+            scene.add(cube);
+            run();
+            // renderer.render(scene,camera);
+        })
+        function run() {
+            requestAnimationFrame(function () {
+                run();
+            });
+            renderer.render(scene, camera);
+            animate();
+        }
+        var currentTime=0;
+        var duration=5000;
+        function animate() {
+            // 一直调用
+            var now=Date.now();
+            var deltat=now-currentTime;
+            currentTime=now;
+            // 慢慢动，时间有关，相应的角度
+            var fract=deltat/duration;
+            var angle = Math.PI*2*fract;
+            console.log(angle);
+            
+            cube.rotation.y += angle; 
+            cube.rotation.x += angle;  
+            cube.rotation.z += angle; 
+        }
+  // window.onload = function() {
+  //   // 有点晚了
+  // }
+    </script>
+</body>
+
+</html>
