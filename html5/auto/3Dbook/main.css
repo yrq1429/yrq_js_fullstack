@@ -1,0 +1,134 @@
+/*css 3d 会带来硬件加速*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    font: 100%/1.5 Helvetica,Arial,sans-serif;
+    /*视点 眼睛离屏幕的距离
+    浏览器兼容前缀：
+        -webkit- chrome
+        -ms- 微软
+        -moz- 火狐
+        -o- 欧朋
+    兼容 移动端  -webkit-   android iphone  webkit
+        PC端  多做
+    */
+    -webkit-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective:1000px;  
+    perspective: 1000px;
+    background: #444;
+    /*图大 渐变css来生成  线性渐变*/
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#444),to(#999));
+    background-image: -webkit-linear-gradient(top,#444,#999);
+    background-image: -moz-linear-gradient(top,#444,#999);
+    background-image: -ms-linear-gradient(top,#444,#999);
+    background-image: -o-linear-gradient(top,#444,#999);
+    background-image: linear-gradient(to bottom,#444,#999); 
+}
+
+.book{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+}
+
+.book{
+    width: 300px;
+    height: 300px;
+    /* background: red; */
+    /*margin: 0 auto;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*两种方法*/
+    /*兼容性 未使用css3， ie678*/
+    /*margin-left: -150px;
+    margin-top: -150px;*/
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    -webkit-transform: rotateX(60deg);
+    -moz-transform: rotateX(60deg);
+    -ms-transform: rotateX(60deg);
+    -o-transform: rotateX(60deg);
+    transform: rotateX(60deg);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.p3d{
+    transform-style: preserve-3d;
+}
+
+/*正面*/
+.front-cover{
+    cursor:move;
+    transform-origin: 0 50%;
+    transform: rotateY(0deg);
+}
+.front{
+    background-color: #d93e2b;
+}
+.page{
+    width: 300px;
+    height: 300px;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 2em;
+}
+.back{
+    background-color: #fff;
+}
+.front-cover .back{
+    background-image: url(https://www.html5tricks.com/demo/css3-3d-book/mdn.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-position: 50% 50%;*/
+    -webkit-transform: translateZ(3px);
+    -moz-transform: translateZ(3px);
+    -ms-transform: translateZ(3px);
+    -o-transform: translateZ(3px);
+    transform: translateZ(3px);
+}
+.flip{
+    transform: rotateY(180deg);
+    /*left: 100%;*/
+}
+
+.back-cover .back{
+    -webkit-transform: translateZ(-3px);
+    transform: translateZ(-3px);
+}
+.shadow, .dino{
+    width: 196px;
+    height: 132px;
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+.shadow{
+    background: url('./shadow.png') no-repeat;
+}
+.dino{
+    background: url('dino.png') no-repeat;
+}

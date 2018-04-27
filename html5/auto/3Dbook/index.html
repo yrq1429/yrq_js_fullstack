@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d books</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="book p3d">
+        <div class="back-cover p3d">
+            <div class="page back flip"></div>
+            <div class="page front p3d">
+                <div class="shadow"> </div>
+                <div class="dino" style="transform: translateZ(1px) skewX(-2.00625deg)"></div>
+            </div>
+        </div>
+
+        <div class="front-cover p3d">
+            <div class="page front flip p3d">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nisl quis nulla eleifend dignissim. Curabitur varius
+                    lobortis tincidunt. Maecenas gravida, nulla quis luctus imperdiet, ipsum nibh consectetur ante, in sodales
+                    massa tortor eget neque. Donec porta ligula massa, id sagittis est. Ut nisl tellus, faucibus nec feugiat
+                    ut, laoreet iaculis felis. Suspendisse ultrices mauris vel tellus suscipit commodo. Integer vitae tortor
+                    erat. Pellentesque non tempor nisi.
+                </p>
+            </div>
+            <div class="page back">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // 函数 作用域 立即执行函数()
+        // xm 命名空间
+        // 减少了全局变量的数量（污染），只有一个
+        // xm 形成了一个命名空间
+        var xm = (function () {
+            var book = document.querySelector('.book');
+            var page = document.querySelector('.front-cover');
+            var dino = document.querySelector('.dino');
+            var shadow = document.querySelector('.shadow');
+            var hold = false;
+            var pageSize = 300;
+            var prefixes = ['Webkit', 'Moz', 'Ms', 'O', ''];
+            var centerPoint = window.innerWidth / 2;
+            var clamp = function (val, min, max) {
+                // 数学函数，两值取大者
+                return Math.max(min, Math.min(val, max));
+            }
+
+            page.onmousedown = function () {
+                hold = true;
+            }
+            page.onmouseup = function () {
+                hold = false;
+            }
+
+            // 事件发生那一瞬间， evt 事件对象
+            window.onmousemove = function (evt) {
+                if (!hold) {
+                    return;
+                }
+                var angle = clamp((centerPoint - evt.pageX + pageSize) / pageSize * -90, -180, 0);
+                // js .style
+
+                for (var i = 0, len = prefixes.length; i < len; i++) {   //len的作用是优化
+                    var prefix = prefixes[i];
+                    book.style[prefix + 'transform'] = 'rotateX(' + (60 + angle / 8) + 'deg)';
+                    page.style[prefix + 'transform'] = 'rotateY(' + angle + 'deg)';
+                    dino.style[prefix + 'transform'] = 'translateZ(' + (angle / 2) + 'deg)';
+                    shadow.style[prefix + 'transform'] = 'translateZ(1px) skewX(' + (angle / 8) + 'deg)';
+                }
+
+                //在之前的倾斜度上，再倾斜15度
+                //book.style.transform ='rotateX('+(60+angle/8) + 'deg)';
+                // 翻开首页
+                //page.style.WebkitTransform = 'rotateY('+angle+'deg)';  //js使用style时也可能会出现兼容性问题
+                //page.style.transform = 'rotateY('+angle+'deg)';
+            }
+            // return {
+            //     book,
+            //     page
+            // }
+        })()
+
+    </script>
+</body>
+</html>
