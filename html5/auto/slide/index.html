@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5滑屏推广页面</title>
+    <script src="https://cdn.bootcss.com/Swiper/4.2.2/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.2.2/css/swiper.min.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container{
+        /* vw,vh相对单位
+        单屏应用
+        */
+        width: 100vw;
+        height: 100vh;
+    }
+    .slide-1{
+        /* 图片比屏幕大是一定的
+        尽量把中间部分显示出来
+        */
+        background: url('https://img.aotu.io/xiaocezi/1.jpg') no-repeat;
+        background-position: 50% 0;
+        background-size: cover;  /*尽可能显示全部图片*/
+        -webkit-background-size: cover;
+    }
+    .slide-2{
+        /* 图片比屏幕大是一定的
+        尽量把中间部分显示出来
+        */
+        background: url('https://img.aotu.io/xiaocezi/2.jpg') no-repeat;
+        background-position: 50% 0;
+        background-size: cover;  /*尽可能显示全部图片*/
+        -webkit-background-size: cover;
+    }
+    .slide-3{
+        /* 图片比屏幕大是一定的
+        尽量把中间部分显示出来
+        */
+        background: url('https://img.aotu.io/xiaocezi/3.jpg') no-repeat;
+        background-position: 50% 0;
+        background-size: cover;  /*尽可能显示全部图片*/
+        -webkit-background-size: cover;
+    }
+    </style>
+</head>
+<body>
+    <!-- 使用已有的成熟解决方案来实现滑屏 -->
+    <div id="o2_main" class="main">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide slide-1"></div>
+            <div class="swiper-slide slide-2"></div>
+            <div class="swiper-slide slide-3"></div>
+            </div>
+            <div class=".swiper-pagination"></div>
+        </div>
+        
+    </div>
+    <script>
+    new Swiper('.swiper-container',{
+        direction:'vertical',
+        pagination:{
+            el:'swiper-pagination'
+        }
+    })
+    </script>
+</body>
+</html>
