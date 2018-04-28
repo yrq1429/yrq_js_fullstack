@@ -1,0 +1,37 @@
+html{
+    box-sizing: border-box;
+    background: #ffc600;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+*,*:before,*:after{
+    /* 继承 */
+    box-sizing: inherit;
+}
+
+.search-form{
+    max-width: 400px;
+    margin: 50px auto;
+
+}
+input{
+    width: 100%;
+    padding: 20px;
+
+}
+
+input.search{
+    margin: 0;
+    text-align: center;
+    outline:0;
+    border: 10px solid #f7f7f7;
+    width: 120%;
+    left:-10%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    border-radius: 5px;
+    /* 内阴影  多重阴影 */
+    box-shadow: 0 0 5px rgba(0,0,0,0.12),inset 0 0 2px rgba(0,0,0,0.19);
+}
