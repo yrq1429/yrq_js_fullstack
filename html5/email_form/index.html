@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 表单API</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- 
+        html5 API 阻止了一些错误，让提交体验更细腻，细致
+        input 各种type 适合各种类型的数据
+        text email number password tel
+        自动去阻止表单提交，
+
+        IE不支持 html5能力 IE9+ ？=>搭理表单
+     -->
+     <!-- autocomplete="off"  表单加这个表示输入时不提示 -->
+    <div class="container">
+    <form name="loginForm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" name="email" class="form-control"  
+            id="exampleInputEmail1" placeholder="Email" >
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div class="row">
+        <ul id="emails">
+
+        </ul>
+    </div>
+    </div>
+</body>
+<script>
+    // 作用域 scope
+    // var globalVariable=(function () {
+    (function () {
+        // 局部变量
+        // var a=10;
+        // var b=7;
+        // // 私有变量
+        // var c=3;
+        // var d=4;
+        // // return {
+        // //     a,
+        // //     b
+        // // }
+        // window.a=10;
+        oForm = document.forms['loginForm'];
+        // 不支持h5的情况一定要注意
+        // this 会多变？ 就是this定不下来，他跟函数的执行方式有关
+        // 如果是普通函数，作为事件的回调函数被执行，  this会指向事件发生的元素
+        // 如果是箭头函数，在执行时this跟父级作用域一致；
+        const arrEmail=[];
+        loadEmail();
+        oForm.addEventListener('submit', (event)=>{
+            event.preventDefault();
+            console.log(this);
+            // 通道
+            // js 查找变量的方式 
+                // 1 本作用域查找
+                // 2 如果1找不到，那就去父级作用域
+                // 3 尽头是window
+            //const oEmail = document.getElementById('exampleInputEmail1')//性能最快 id 索引
+            const oEmail=oForm.email;
+            // console.log(oEmail);
+            const strEmail = oEmail.value.trim();
+            if (!strEmail) {
+                alert('请输入邮箱');
+                return ;   
+            }
+            
+            // 验证邮箱格式 正则
+            // shunwu2001@163.com
+            //  @前后两部分 .com .cn .
+            // test true false是否合格
+            // match (分组)得到数组，正则查找功能
+            const reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+.([a-zA-Z0-9-_]+)/
+            // ^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$ 
+            if (!reg.test(strEmail)){
+                alert('邮箱输入错误，请重新输入');
+                return false;
+            }
+
+            //显示到页面上
+            addEmail(strEmail); 
+            saveEmail(strEmail);
+            oForm.reset();
+
+
+            // this 尽然是window
+            
+            // ie9以下
+            // input type email=>text
+            // 即利用html5 内置提醒（email）
+        },false);
+        // 变量查找像冒泡
+        function addEmail(email) {
+            const strHTML=`
+            <li>
+            ${email}
+            </li>
+            `
+            document.querySelector('#emails').innerHTML+=strHTML;
+        }
+        function saveEmail(email) {
+            // 本地存储
+            // key=>value  存的不止是字符串，多个？ 数组对象是不可以存的，toString
+            let strEmail=localStorage.getItem('email');
+            if (strEmail) {
+                strEmail+=`,${email}`;  
+            }else{
+                strEmail = email;
+            }
+            localStorage.setItem('email',strEmail);
+        }
+        function loadEmail() {
+            // 从何加载   
+            // setItem  设置key=>value;
+            const email = localStorage.getItem('email');
+            // indexOf()  未查到返回-1
+            if (email.indexOf(',') > -1) {
+                console.log(email);
+                // 显示多个？
+                 const emails = email.split(',');
+                 for (let i = 0; i < emails.length; i++) {
+                     addEmail(emails[i]);
+                 }
+                 
+            }else{
+                addEmail(email);
+            }
+            
+            
+        }
+    })()
+    // 全局变量 window 顶级
+    // document 文档
+    // console.log(globalVariable.a);
+    // console.log(a);
+    
+    
+</script>
+</html>
