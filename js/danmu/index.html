@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹幕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* detailImg 700 500 
+  相对于屏居中 */
+
+        .detailImg {
+            width: 700px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -250px;
+            background: red;
+        }
+
+        #barrageDiv>div {
+            position: absolute;
+            background: green;
+            height: 20%;
+            width: 100%;
+        }
+
+        #barrageLayer1 {
+            top: 0%;
+        }
+
+        #barrageLayer2 {
+            top: 25%;
+        }
+
+        #barrageLayer3 {
+            top: 50%;
+        }
+
+        #barrageLayer4 {
+            top: 75%;
+        }
+         .barrageDivClass {
+            position: absolute;
+            top: 10px;
+            padding: 0 10px;
+            line-height: 60px;
+        }
+        .barrageDivClass_img {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-size: cover;
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .barrageDivClass_txt {
+            font-style: 24px;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 弹幕区域 搭建好静态的结构 -->
+    <div class="detailImg">
+        <div id="barrageDiv">
+            <div id="barrageLayer1"></div>
+            <div id="barrageLayer2"></div>
+            <div id="barrageLayer3"></div>
+            <div id="barrageLayer4"></div>
+        </div>
+    </div>
+    <script>
+        // ip 访问太多， 刷新 
+        // 肉机攻击 DDOS
+        const comments = [
+            {
+                "username": "veebaby",
+                "avatar": "https://img3.doubanio.com/icon/u47312913-12.jpg",
+                "content": "瞧你这损色"
+            },
+            {
+                "username": "silly晗",
+                "avatar": "https://img3.doubanio.com/icon/u147698249-4.jpg",
+                "content": "你讲啊， 你来自哪里"
+            },
+            {
+                "username": "幽华濯露",
+                "avatar": "https://img3.doubanio.com/icon/u166072746-3.jpg",
+                "content": "美国这也不好玩了吧？"
+            },
+            {
+                "username": "别拿柯基诱惑我",
+                "avatar": "https://img3.doubanio.com/icon/u145412244-65.jpg",
+                "content": "站在风口浪尖，猪都会飞起来"
+            },
+            {
+                "username": "几分",
+                "avatar": "https://img3.doubanio.com/icon/u145582566-21.jpg",
+                "content": "谁是英雄"
+            },
+            {
+                "username": "Desperado",
+                "avatar": "https://img1.doubanio.com/icon/u98500726-7.jpg",
+                "content": "胡巴，胡巴"
+            },
+            {
+                "username": "Fiona",
+                "avatar": "https://img1.doubanio.com/icon/user_normal.jpg",
+                "content": "也就是这样吧"
+            },
+            {
+                "username": "Claire",
+                "avatar": "https://img3.doubanio.com/icon/u37207877-52.jpg",
+                "content": "别了，小可"
+            },
+            {
+                "username": "芊儿",
+                "avatar": "https://img1.doubanio.com/icon/u153756226-8.jpg",
+                "content": "没谁了"
+            },
+            {
+                "username": "éclair",
+                "avatar": "https://img3.doubanio.com/icon/u2857306-44.jpg",
+                "content": "这就是美国总统"
+            },
+            {
+                "username": "七辻屋的馒头君",
+                "avatar": "https://img3.doubanio.com/icon/u59556555-13.jpg",
+                "content": "我来个去"
+            },
+            {
+                "username": "玉河子",
+                "avatar": "https://img3.doubanio.com/icon/u3157959-24.jpg",
+                "content": "谁都是这样的吧"
+            }
+        ];
+        // URL 代表着统一资源定位符 
+        const COMMENTS_URL = 'https://www.easy-mock.com/mock/5aded0f2c57e6f08ff165a4b/students/comments#!method=get';
+        let current = 0;
+        const channelEles =
+            document.querySelectorAll(
+                '#barrageDiv>div');
+        // 流 定时器 触发器， 实时，
+        // 拉取 fetch
+
+        // 页面效果 函数模块化 
+        // 一条评论的html  DOM
+        // 定时移动  setInterval
+        // 生成随机的信道channel
+
+        // 放完了怎么办？
+        // 流程性代码 计算机决定 unit 
+        // 机器商 =》 情商
+        // 异步
+
+        // fetch(COMMENTS_URL)
+        // .then(data => data.json())
+        // .then(data => {
+        // console.log(data);
+        showDanmu();
+        // })
+
+        function showDanmu() {
+            // i 顺序 数组从前到后
+            // 时刻 comment json date
+            // 首 0 1......
+
+            // console.log(showComment)
+            setInterval(showComment, 1100);
+        }
+        function showComment() {
+            // console.log(current);
+            current++;
+            if (current >= comments.length) {
+                current = 0;
+            }
+            const comment = comments[current];
+            const channelIndex = getChannelIndex();
+            addComment(comment, channelIndex);
+        }
+        // 返回随机信道
+        // 4条选其中一条
+        const getChannelIndex = function () {
+            // return 0|1|2|3; 
+            return Math.floor(Math.random() * 4);
+        }
+        // 返回comment html
+        const addComment = function (comment, index) {
+            const channel = channelEles[index];
+            // console.log(channel);
+            // console.log(channelEles[index]);
+            // DHTML node 结点 比HTML好的是，node对象，HTML只是字符串，快，字符串模板，缺点也明显，
+            // node对象，你可以立马添加事件
+            const commentBox = document.createElement('div');
+            const commentImg = document.createElement('span');
+            const commentText = document.createElement('span');
+            // js 和 css 分工的点
+            commentImg.className='barrageDivClass_img';
+            commentImg.style.backgroundImage=`url(${comment.avatar})`;
+            commentText.className='barrageDivClass_txt';
+            commentText.innerText=`${comment.username}:${comment.content}`;
+            commentBox.className='barrageDivClass';
+            commentBox.appendChild(commentImg);
+            commentBox.appendChild(commentText);
+            commentBox.style.left='700px';
+            channel.appendChild(commentBox);
+            setInterval(function(){
+                const offset = parseInt(commentBox.style.left);
+                commentBox.style.left=`${offset-5}px`
+            },20)
+        }
+
+    </script>
+</body>
+
+</html>
