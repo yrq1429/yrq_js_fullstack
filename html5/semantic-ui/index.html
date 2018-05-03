@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="http://www.semantic-ui.cn/examples/assets/library/jquery.min.js"></script> -->
+</head>
+<body>
+    <div id="root"></div>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525327929710&di=9aa2bd5e32164164df56390f0b71040a&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2439355652%2C1852440864%26fm%3D214%26gp%3D0.jpg
+    " alt="" />
+
+    <script>
+        // $ 就是jquery  window下唯一的命名空间
+        // $()   $ =>function   callback
+        // function () {} 参数
+        (function (g) {
+            
+            // 只有jQuery可以访问到，外面访问不到，立即执行，函数作用域的好处
+            function ElementWrapper(selector){
+                this.ele = document.querySelector(selector)
+                if(!this.ele)
+                    throw new Error('没有这个元素');
+            }
+            ElementWrapper.prototype={
+                html:function(strHTML){
+                    this.ele.innerHTML = strHTML;
+                }
+            }
+            // jquery 野心，对原生api 的封装
+            // JS 原生API 有很多兼容性的问题，这是选择jquery的原因
+            g.$ = function (param) {
+                if (typeof (param) === 'function') {
+                    document.addEventListener('DOMContentLoaded', param, false);
+                }else if(typeof param === 'string'){
+                    // 返回结点
+                    //return document.querySelector(param);//完成.innerHTML
+                    // 完成 .html
+                    // obj.html()  dom结点 => 类
+                    const obj = new ElementWrapper(param);
+                    return obj;
+                }
+                // window.  整个dom树的顶级对象
+                // 事件注册
+                // DomContentLoaded在IE低版本不支持
+                
+            }
+        })(window)
+        $(function () {
+            // console.log('dom ready');
+            
+            $('#root').html('加载');
+        })
+    // image 结点 node 
+    // DOM API appendChild .style ...
+    // 原材料 html css
+    // node 结点形成了DOM树  树成型了后，触发dom ready 事件
+        // 解析HTML构建DOM Tree
+        // 构建渲染树(解析css)
+        // 布局渲染树
+        // 页面的绘制  render
+        // 网页内容下载完成  资源  http请求的都是资源（img script）
+        // window.onload
+    // js 下载有阻塞
+    // 放到底部，如果需求并不复杂，为了加快速度，选用弃用框架
+    // 页面加载完成
+    // window.onload = function () {
+    //     console.log('页面加载完成');
+    // }
+    // 早一点  DOM ready事件
+    // $(function () {
+    //     console.log('DOM ready');
+        
+    // })
+    </script>
+</body>
+</html>
