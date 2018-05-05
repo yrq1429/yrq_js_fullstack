@@ -156,4 +156,4 @@ var Coffee = Beverage({
     }
 });
 var coffee = new Coffee();
-coffee.init();
+coffee.init();  //调用init方法
