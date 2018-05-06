@@ -1,0 +1,8 @@
+<view class="container">
+    <text>{{motto}}</text>
+    <view class="flex-wrap flex-row">
+        <view class="flex-item bc_green">1</view>
+        <view class="flex-item bc_red">2</view>
+        <view class="flex-item bc_blue">3</view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+<view class="container">
+    <!-- UI组件  一组标签？ map是原生的html提供不了的  HTML标签在诞生时，展示文档，简单就好，能力有限
+        现在：提供一个牛逼的功能，封装起来，用一个新的标签来表示 -->
+    <map id="ofoMap" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}"
+    controls="{{controls}}"
+    />
+    
+</view>
