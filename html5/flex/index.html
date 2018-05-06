@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>了解flex布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 900px;
+            height: 500px;
+            display: flex;
+            justify-content:flex-end;
+            /* align-items: flex-end; */
+            /* align-content: flex-start; */
+            /* flex-direction: row; */
+            background: #000000;
+            flex-wrap: wrap;
+            
+        }
+        .box1{
+            background: red;
+            width: 80px;
+            align-self:flex-start;
+            height: 100px;
+        }
+        .box2{
+            background: blue;
+            width: 90px;
+            height: 100px;
+        }
+        .box3{
+            background: yellow;
+            width: 100px;
+            height: 100px;
+            
+        }
+        .box4{
+            background: green;
+            width: 100px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>
