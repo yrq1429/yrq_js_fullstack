@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XXX的小家</title>
+</head>
+<body>
+    <div id="user">
+        <img src="" alt="" id="avatar">
+        <p id="username"></p>
+    </div>
+    <form action="" name="userForm">
+        <div class="field">
+            <label for="avatarInput">头像</label>
+            <input type="text" name="avatar" id="avatarInput">
+        </div>
+        <div class="field">
+            <label for="avatarInput">昵称</label>
+            <input type="text" name="nickname" id="nicknameInput">
+        </div>
+    </form>
+    <script>
+        window.onload=function(){
+            // 流程
+            const user_id = 10001;
+                // const URL = 'https://www.easy-mock.com/mock/5af03ac5957fd4308a30b9c0/api/userinfo#!method=get'
+            const URL = 'https://www.easy-mock.com/mock/5aded0f5c57e6f08ff165a5d/students/userinfo#!method=get';
+            // fetch(URL)
+            //     .then(data => data.json())
+            //     .then(data =>{
+            //         // console.log(data);
+            //         document.querySelector('#avatar').src = data.data.avatar;
+            //         document.querySelector('#username').innerHTML = data.data.nickname;
+            //     })
+
+            function renderUserInfo(user) {
+                document.querySelector('#avatar').src = user.data.avatar || '';
+                document.querySelector('#username').innerHTML = user.data.nickname || '未命名';
+            }
+            function getUserInfo(uid,...fn) {
+                fetch(URL)
+                    .then(data => data.json())
+                    .then(data => {
+                        // ? 做想做的其他事情
+                        // console.log(data);
+                        // renderUserInfo(data);
+                        fn.forEach(func => {
+                            func(data);
+                        })
+                    })
+                // console.log(fn);
+            }
+            function renderUserForm(user) {
+                const oForm = document.forms['userForm']; //得到整个表单
+                const avatarInput = oForm['avatar'];  //得到avatar
+                const nicknameInput = oForm['nickname'];  //得到nickname
+
+                avatarInput.value = user.data.avatar;
+                nicknameInput.value = user.data.nickname;
+            }
+            getUserInfo(user_id, renderUserInfo,renderUserForm);
+                
+        }
+    </script>
+</body>
+</html>
