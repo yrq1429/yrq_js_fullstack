@@ -1,0 +1,56 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #fb3826;
+  justify-content: center;
+  align-content: center;
+}
+.page_warp {
+  position: absolute;
+  width: 640px;
+  height: 1028px;
+  left: 50%;
+  top: 0;
+  margin-left: -320px;
+  transform-origin: 50% 0;
+}
+.page_scene {
+  position: absolute;
+  width: 572px;
+  height: 586px;
+  top: 58px;
+  margin-left: -286px;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.p8 .page_key {
+  position: absolute;
+  width: 572px;
+  height: 586px;
+  background-image: url("./img/p8.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: p8 steps(3, end) 1.5s infinite;
+}
+@-moz-keyframes p8 {
+  100% {
+    background-position: 0 150%;
+  }
+}
+@-webkit-keyframes p8 {
+  100% {
+    background-position: 0 150%;
+  }
+}
+@-o-keyframes p8 {
+  100% {
+    background-position: 0 150%;
+  }
+}
+@keyframes p8 {
+  100% {
+    background-position: 0 150%;
+  }
+}

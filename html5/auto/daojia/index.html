@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东到家</title>
+    <!-- base.css基础样式
+         loading 为了加载资源
+         main 主页务
+    -->
+    <link rel="stylesheet" href="./base.css"/>
+    <link rel="stylesheet" href="./main.css"/>
+    <link rel="stylesheet" href="./loading.css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <!-- <div class="box">
+        <img src="https://pic.36krcnd.com/201805/09093428/n1zzkta25qikkhbu!heading" alt="">
+         每日优鲜便利购李漾：风口只帮助加速，不决定成败
+    </div> -->
+    <!-- <input type="text" placeholder="你想去的"> -->
+    <div id="o2_loading" class="loading">
+        <div class="inner">
+            <i class="before"></i>
+            <i class="after"></i>
+        </div>
+        <div class="text">loading</div>
+    </div>
+    <div id="o2_main" class="main hide">
+        <div class="page_wrap __s">
+            <div class="page p8" id="page">
+                <div class="page_scene">
+                    <div class="page_key">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/preloader.js/src/preloader.js"></script>
+    <script>
+        $(function () {
+            // 预加载器，资源，音乐，图片，视频
+            // jQuery  去cdn找一个  Preloader?
+            // 使用npm来安装
+
+            const preloader = new Preloader({
+                resources:[
+                    'img/p8.png'
+                ],
+                concurrency:4,
+                perMinTime:1000
+            })
+            preloader.addCompletionListener(function(){
+                // 将loading 删除，将main显示出来
+                $('#o2_loading').remove();
+                $('#o2_main').removeClass('hide');
+                init();
+            });
+            preloader.start();
+            function init() {
+                console.log('init ok')
+            }
+        })
+    </script>
+</body>
+</html>
