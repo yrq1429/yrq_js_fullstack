@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="titleBar">
+    <div class="status">
+      <!-- wxml 模板 {{数据状态}} 数据的绑定 
+        动态的，可编译，活的 data是活的 setData 只要状态一变，界面立即改变
+      -->
+      <text class="{{status=='1'?'active':''}}" data-status="1" bindtap="showStatus">全部</text>
+      <text class="{{status=='2'?'active':''}}" data-status="2" bindtap="showStatus">未完成</text>
+      <text class="{{status=='3'?'active':''}}" data-status="3" bindtap="showStatus">已完成</text>
+    </div>
+    <div class="add">
+      <button class="mini-btn" size="mini" type="warn" bindtap="addTodoShow">
+        +添加
+      </button>
+    </div>
+  </view>
+  <view class="addForm {{addShow?'hide':''}}">
+    <view class="addForm-div">
+      <input type="text" placeholder="请输入任务" class="weui-input" bindinput="setInput" value="{{addText}}"/>
+      <view class="addForm-btn">
+        <button class="weui-btn mini-btn" type="warn" size="mini" bindtap="addTodo">确定添加</button>
+        <button class="weui-btn mini-btn" type="default" size="mini" bindtap="addTodoHide">取消</button>
+      </view>
+    </view>
+  </view>
+  <scoll-view scoll-y class="lists">
+    <!-- 小程序里面的指令for: wx:for="{{}}-->
+    <view class="item" wx:for="{{lists}}" wx:key="index" >
+      <div class="content">
+        <icon class="icon-small" size="23" data-item="{{index}}" type="{{item.status=== '1'?'success':'circle'}}" bindtap="changeTodo"></icon>
+        <text class="title">{{item.title}}</text>
+        <text class="time">{{item.date}}</text>
+      </div>
+    </view>
+  </scoll-view>
+</view>

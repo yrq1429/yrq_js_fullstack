@@ -1,0 +1,115 @@
+.titleBar{
+  border-bottom: 1rpx solid #eee;
+  padding: 0 30rpx 10rpx;
+  display: flex;
+  align-items: center;
+}
+.titleBar .status{
+  flex: 1;
+  /* background: red; */
+}
+.titleBar .status text{
+  display: inline;
+  font-size: 12pt;
+  color: #999999;
+  padding: 10rpx -20rpx -10rpx 0;
+  margin-right: 15rpx;
+
+}
+/* 主元素拿到其他子元素本身该有的大小外所有的空间 */
+/* .add{
+  flex: 1;
+} */
+.titleBar .status text.active{
+  color: #ca2100;
+  /* background: #eeeeee; */
+
+}
+
+/* DOM JQuery 时代已过去
+  现在是MVVM时代  
+*/
+
+/* 弹出层来做  移动端 小  节省空间 z-index */
+.addForm{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  /* .4透明度 */
+  background: rgba(0, 0, 0, .4);
+}
+.addForm .addForm-div{
+  background: #ffffff;
+  padding: 30rpx;
+}
+.weui-input{
+  /* 相对于当前的font-size */
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+}
+.addForm .addForm-div .weui-input{
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  padding: 5rpx 20rpx;
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+}
+.weui-btn:first-child{
+  margin-top: 0;
+}
+.addForm .addForm-div .addForm-btn button{
+  margin-right: 15rpx;
+}
+.hide{
+  display: none;
+}
+.lists{
+  /* ? 0 */
+  height: 0;
+  flex: 1;
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+}
+.lists .item{
+  border-bottom: 1px dotted #eee;
+  position: relative;
+  overflow: hidden;
+}
+.lists .item .content{
+  display: flex;
+  padding: 15rpx -30rpx;
+  align-items: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 694rpx;
+  z-index: 10;
+  background: #ffffff;
+}
+.lists .item icon{
+  padding: 15rpx 0 10rpx;
+}
+icon{
+  vertical-align: middle;
+}
+.lists .item text{
+  font-size: 11pt;
+  color: #444;
+  padding: 0 10rpx;
+}
+.lists .item .time{
+  font-size: 9pt;
+  color: #999999;
+}
+.lists .item .title{
+  flex: 1;
+  overflow: hidden;
+  /* 文本不超出容器  并且出现“...”   代码为以下两行 */
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  /* background:red; */
+}
