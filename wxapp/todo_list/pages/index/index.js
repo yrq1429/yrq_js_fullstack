@@ -20,14 +20,15 @@ Page({
       time: '刚刚',
       status: '0'
     }],
+    curList:[],
     addText:''
   },
   showStatus:function (e) {
     // 区分  
     const status = e.currentTarget.dataset.status;
-    console.log(e,status);
-    
-    // 不再是DOM 编程 ，针对界面状态的编程，
+    // console.log(e,status);
+    console.log(e);
+    // 不再是DOM 编程 ，针对界面状态的编程.
     this.setData({
       status: status
     })
@@ -75,8 +76,10 @@ Page({
     // ？index
     const index = e.currentTarget.dataset.item;
     const temp = this.data.lists;
+    // console.log(e);
+    
     temp.forEach((item,i) => {
-      console.log(item,index);
+      // console.log(item,index);
       if (i == index) {
         if (item.status == '0') {
           item.status = '1';
