@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css animation step 步增动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            /* inherit 继承*/
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            display: flex;
+            justify-content: center;/*主轴居中*/
+            align-items: center;/*纵轴居中 */
+        }
+        .sprite{
+            width: 245px;
+            height: 400px;
+            display: block;
+            background: url(./walker.png) no-repeat scroll 0 0 transparent;
+            animation: walk 1s steps(10) infinite;
+            /* margin: 0 auto; */
+        }
+        @keyframes walk {
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: 0 -4000px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="sprite">
+
+    </div>
+   
+</body>
+</html>
