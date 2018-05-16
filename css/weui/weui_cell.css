@@ -1,0 +1,128 @@
+
+.weui-cells__title{
+    margin-top: 0.77em;
+    margin-bottom: .3em;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #808080;
+    font-size: 14px;
+}
+/* 只选择前面有title的cells */
+.weui-cells__title + .weui-cells {
+    margin-top: 0;
+}
+/* 选中所有的cells */
+.weui-cells{
+    margin-top: 1.17647059em;
+    background-color: #fff;
+    line-height: 1.47058824;
+    font-size: 17px;
+    overflow: hidden;
+    position: relative;
+}
+.weui-cells:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+    z-index: 2;
+}
+.weui-cell {
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.weui-cell__bd{
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+}
+.weui-label{
+    display: block;
+    width:  105px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.weui-input{
+    width: 100%;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.47058824em;
+    line-height: 1.47058824em;  
+
+}
+.weui-cells:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    transform: scaleY(.5);
+    z-index: 2;
+    transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+}
+.weui-cell + .weui-cell:after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #e5e5e5;
+    transform: scaleY(.5);
+    z-index: 2;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+/* weui-cell   element hd bd ft */
+.weui-cell__ft{
+    text-align: right;
+    color:#808080;
+}
+/* 没了？   但是功能还在  */
+.weui-check{
+    position: absolute;
+    left: -9999em;
+}
+
+[class^="weui-icon-"],[class*="weui-icon-"] {
+    display: inline-block;
+    vertical-align:middle;
+    font: 14px/1 "weui";
+    text-rendering: auto;
+    /* 抗锯齿 */
+    -webkit-font-smoothing:antialiased;
+}
+[class^="weui-icon-"]:before,
+[class*=" weui-icon-"]:before{
+    display: inline-block;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+.weui-cells_radio .weui-check:checked + .weui-icon-checked:before{
+    display: block;
+    content: '\EA08';
+    color: #09BB07;
+    font-size: 16px;
+}
+.weui-btn-area{
+    margin: 1.17647059em 15px 0.3em;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WEUI CELL</title>
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./weui_cell.css">
+    <link rel="stylesheet" href="./weui_btn.css">
+    <link rel="stylesheet" href="./weui_agree.css">
+</head>
+<body>
+    <div class="weui-cells__title">登录</div>
+    <div class="weui-cells weui-cells_form weui-cells_radio">
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">用户名</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input type="text" class="weui-input" placeholder="请输入用户名" id="nameInput"/>
+            </div>
+            <div class="weui-cell__ft">
+                <input type="radio" class="weui-check" checked="true">
+                <span class="weui-icon-checked"></span>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd">
+                <label class="weui-label">密码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input type="password" class="weui-input" placeholder="请输入密码" id="passwordInput"/ minlength="6" maxlength="16">
+            </div>
+        </div>
+    </div>
+    <label for="weuiAgree" class="weui-agree">
+        <input type="checkbox" id="weuiAgree" class="weui-agree__checkbox" >
+        <span class="weui-agree__text">
+            阅读并同意
+            <a href="#">《相关条款》</a>
+        </span>
+    </label>
+    <div class="weui-btn-area">
+        <a href="javascript:;" id="loginBtn" class="weui-btn weui-btn_primary">提交</a>
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            const loginBtn = document.getElementById('loginBtn');
+            const LoginForm = {
+                nameInput:document.getElementById('nameInput'),
+                passwordInput:document.getElementById('passwordInput'),
+                submit:function(){
+                   if (!this.checkUsername()) {
+                       return false
+                   } 
+                    if (!this.checkPassword()) {
+                        return false
+                    } 
+                    return true;
+                },
+                checkUsername:function(){
+                    const strUsername = this.nameInput.value.trim();
+                    if (!strUsername) {
+                        this.nameInput.focus();
+                        return false;
+                    }
+                    // alert(strUsername);
+                    return true;
+                },
+                checkPassword:function(){
+                    const strPassword = this.passwordInput.value.trim();
+                    if (!strPassword) {
+                        this.passwordInput.focus();
+                        return false;
+                    }
+                    const strLen = strPassword.length;
+                    if (strLen < 6 || strLen >16) {
+                        alert('密码不合要求');
+                        return false;
+                    }
+                    return true;
+                },
+                reset:function(){
+                    nameInput.value="";
+                    passwordInput.value=""; 
+                    this.nameInput.focus();
+                }
+            }
+            loginBtn.addEventListener('click', function (event) {
+               if (LoginForm.submit()) {
+                   LoginForm.reset();
+                   alert("表单提交成功");
+               }
+            }, false)
+        }
+        
+    </script>
+</body>
+</html>
