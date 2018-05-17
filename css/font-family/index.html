@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣市集</title>
+    <link rel="stylesheet" href="./common.css">
+    <style>
+        #footer {
+            margin-top: 0;
+        }
+        #footer {
+            width: 100%;
+            background-color: #f7f7f7;
+            border-top: 1px solid #e4e4e4;
+            padding-top: 30px;
+            padding-bottom: 25px;
+            margin-top: 60px;
+        }
+        #footer .footer-wrapper {
+            width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+            clear: both;
+            overflow: hidden;
+            color: #bdbdbd;
+            text-align: center;
+        }
+        body {
+            font-family: Helvetica,Arial,Roboto,PingFang SC,Microsoft Yahei,Hiragino Sans GB,sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        div {
+            display: block;
+        }
+        #footer .logo {
+            font-size: 32px;
+            line-height: 1em;
+            color: #9b9b9b;
+            margin-right: 10px;
+        }
+        .mui-icon {
+            font-family: market-ui-iconfont!important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-stroke-width: .2px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+        }
+        #footer .logo {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .mui-icon {
+            font-family: market-ui-iconfont!important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-stroke-width: .2px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+        }
+        #footer .info {
+            text-align: left;
+        }
+        #footer .info, #footer .logo {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .mui-icon.logo:before {
+        content: "\e603";
+        }
+    </style>
+</head>
+<body>
+    <!-- 使用自定义字体显示图标是一项常用的技能，
+        iconfont alifont
+        网页中会经常使用一些小图标，首页，订单，我的......用图片？tabbar 10-20个图标
+        用png http下载数太多
+        雪碧图   sprite 把多个图拼成一个图 background-position来取图
+        mui-icon  将这些小图标放到一个自定义字体库里面。
+
+        图标字体库  由于使用base64将很多的图标集中到字体中来显示，省去了很多大小
+        也只有一个http请求  
+        base64 Chrome推出的文件格式，采用编码格式
+        经常用来表示图片或文件，体积更小。
+
+        前端性能优化  使用自定义字体库 base64图片
+        
+    -->
+    <div id="footer">
+        <div class="footer-wrapper">
+            <span class="logo">
+                <i class="mui-icon logo">
+
+                </i>
+            </span>
+            <div class="info">
+                <p>
+                    © 2018 market.douban.com, all rights reserved 北京和光文创科技有限责任公司
+                </p>
+                <p>
+                     注册地址：北京市朝阳区酒仙桥路14号B区3楼3层302 联系电话：4008353331-5
+                </p>
+                <p>
+                     统一信用代码：91110105MA00G4T34T 食品经营许可证: JY11105111524423
+                </p>
+                <p>
+                     出版物经营许可证：新出发京批字第直170330号
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
