@@ -1,0 +1,61 @@
+page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+.container-out{
+  height: 600rpx;
+  width: 650rpx;
+  margin: 100rpx auto;
+  border-radius: 40rpx;
+  background-color: #b136b9;
+  box-shadow: 0px 10px 0 #871a8e;
+  position: relative;
+}
+.circle{
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+.content-out{
+  position: absolute;
+  height: 150rpx;
+  width: 166.6666rpx;
+  border-radius: 15rpx;
+  background-color: #f5f5fc;
+  box-shadow: 0 5px 0 #d87fde;
+}
+.start-btn{
+  position: absolute;
+  margin: auto;
+  top: 10rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 15rpx;
+  height: 140rpx;
+  width: 166.6666rpx;
+  background-color: #ffe400;
+  box-shadow: 0 5px 0 #e7930a;
+  color: #f6251e;
+  text-align: center;
+  font-weight: bold;
+  line-height: 150rpx;
+  font-size: 55rpx;
+
+}
+.award-image{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 130rpx;
+  height: 140rpx;
+}
