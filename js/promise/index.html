@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise es6 异步当家花旦</title>
+</head>
+<body>
+    <script>
+        // console.log('开始了');
+        // fetch('https://wesbos.com/wp-json/wp/v2/posts')
+        // .then(function (res) {
+        //     console.log('A');
+        // });
+        // fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris')
+        // .then(function (res) {
+        //     console.log('B');
+        // })
+
+        // 等到异步A和异步B发生之后再执行
+        // console.log('C');
+        // 顺序执行？  JS执行顺序不再同步
+        // 异步 所以js的执行顺序得不到保证，
+        //A->B->C？
+
+        // 许下诺言，先好好写代码，找。。。。
+        // 对未来会发生的事情
+        // 将要耗时的事情，交给promise吧。
+        // resolve 解决   reject 拒绝
+        // 复杂任务时的调度，
+        // const p = new Promise((resolve, reject)=>{
+        //     console.log('A');
+        //     setTimeout(() => {
+        //         //数据查询  MySQL  读取文件，定时任务
+        //         // resolve('A is over');
+        //         reject('失败的原因');
+        //     }, 1000);
+        // });
+        // // 代码执行次序在手
+        // p.then((res)=>{
+        //     console.log(res);
+        // }).catch(e=>{
+        //     console.log(e);
+        // })
+        
+        // A->C  B如何在中间？
+        // 强制代码的执行顺序，同步执行
+
+        // 两件异步的事情，发生不确定的时间，Promise
+        const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts ');
+        // const streeCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/searchq=paris')
+        
+        // 最挖的那个执行完 A B 再执行C    JS不会为异步停留
+        Promise
+            .all([postsPromise])
+            .then(responses=>{
+                // console.log(response);
+                return Promise.all(responses.map(
+                    res => res.json()
+                ))
+            })
+            .then(responses => {
+                console.log(responses);
+                
+            })
+
+        // postsPromise.then();
+    </script>
+</body>
+</html>
