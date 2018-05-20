@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>login</title>
+  <script>
+    //   不同的手机1rem  单位是 宽度10分之一
+    // 1rem = html font-size
+    (function (w) {
+      // window 是JS 全局 dom document 只是其中一部分  
+      // 导航 location.href navigator lbs 经纬度
+      // 陀螺仪 存储localStorage
+      let s = w.document;
+      let r = s.documentElement;  // 找到HTML元素
+      let colWidth = r.clientWidth / 10; // 找到宽度的1/10
+      console.log(colWidth);
+      r.style.fontSize = colWidth + 'px';
+      //   console.log(r);
+      //   console.log(s);
+    })(window)
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .box {
+      width: 10rem;
+      height: 10rem;
+      background-color: red;
+      font-size: 0px;
+    }
+
+    .item {
+      width: 1rem;
+      height: 10rem;
+      background: yellow;
+      display: inline-block;
+    }
+
+    .item:nth-child(2n) {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <!-- 移动端试配 百分比, flex 布局,  em  相对于自身的font-size 
+  rem html font-size 
+  em 16px 24px  24/16 旧    px换算 rem html 就可以
+  px2rem  -->
+</body>
+
+</html>
