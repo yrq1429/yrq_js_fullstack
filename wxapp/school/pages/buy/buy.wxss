@@ -1,0 +1,7 @@
+.weui-msg__icon-area image{
+    width: 250rpx;
+    height: 250rpx;
+}
+.weui-msg__title.big{
+    font-size: 35px;
+}

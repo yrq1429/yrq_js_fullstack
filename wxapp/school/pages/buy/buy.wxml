@@ -1,0 +1,20 @@
+<view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <image src="/images/icon_light.png"/>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">我的余额</view>
+            <view class="weui-msg__title big">￥45.53</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary">购买</button>
+                <button class="weui-btn" type="default">记录</button>
+            </view>
+        </view>
+        <view class="weui-msg__extra-area">
+            <view class="weui-footer">
+                <view class="weui-footer__text">你五毛我五毛，那么咱两就能一块啦</view>
+            </view>
+        </view>
+    </view>
