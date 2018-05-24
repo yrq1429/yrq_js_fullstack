@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!-- 小程序可以获得用户的信息（头像，昵称，所在地） -->
+    <button size="mini" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <block wx:if="lists.length < 1">
+    <view class="nodata">暂无数据</view>
+  </block>
+  <scroll-view class="lists" scroll-y>
+    <view class="item" wx:for="{{lists}}" wx:key="{{item.id}}">
+      <view class="content" style="{{item.txtStyle}}" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+        <icon class="icon-small" type="{{item.status === '0'?'circle':'success'}}" size="23" data-item="{{item.id}}" bindtap="changeTodo"></icon>
+        <text class="title {{item.status === '1'?'over':''}}">{{item.title}}</text>
+        <text class="time">{{api.formatTime(item.id)}}</text>
+      </view>
+      <view class="del" data-item="{{item.id}}" bindtap="delTodo">
+        <text>删除</text>
+      </view>
+
+    </view>
+  </scroll-view>
+
+  <view class="addForm {{addShow ?'':'hide'}}">
+    <view class="addForm-div">
+      <input class="weui-input" placeholder="请输入todo" value="{{addText}}" bindinput="setInput" focus="{{focus}}"/>
+      <view class="addForm-btn">
+        <button class="weui-btn min-btn" bindtap="addTodo" size="mini" type="warn">确定</button>
+        <button class="weui-btn min-btn" type="defalut" bindtap="addTodoHide" size="mini">取消</button>
+      </view>
+    </view>
+  </view>
+</view>
