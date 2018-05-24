@@ -1,0 +1,56 @@
+<view class="weui-cells hotel">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/image/hotel.png" />
+    </view>
+    <view class="weui-cell__bd">
+      <view class="hotel_title">酒店</view>
+      <view class="hotel_content">国内/海外/特价/名宿</view>
+    </view>
+    <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class="weui-cells fly">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/image/fly.png" />
+    </view>
+    <view class="weui-cell__bd">
+      <view class="fly_title">机票</view>
+      <view class="fly_content">急速预定/品质飞行</view>
+    </view>
+    <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class="weui-cells train">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/image/train.png" />
+    </view>
+    <view class="weui-cell__bd">
+      <view class="train_title">火车票</view>
+      <view class="train_content">24H预定/急速抢票</view>
+    </view>
+    <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+<view class="weui-cells bus">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/image/bus.png" />
+    </view>
+    <view class="weui-cell__bd">
+      <view class="bus_title">汽车票</view>
+      <view class="bus_content">官方授权/覆盖全国</view>
+    </view>
+    <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
+
+
+<view class="weui-footer weui-footer_fixed-bottom">
+  <view class="weui-footer__links">
+    <navigator url="" class="weui-footer__link">携程旅游</navigator>
+  </view>
+  <view class="weui-footer__text">热线电话：12345678910</view>
+</view>
