@@ -30,7 +30,7 @@
         </view>
         <view class="orders-view">
             <!-- <view class="content"> -->
-            <image src="/image/hotel-min.png" />
+            <image src="/image/view-min.png" />
             <text class="title">景点门票</text>
             <!-- </view> -->
         </view>
