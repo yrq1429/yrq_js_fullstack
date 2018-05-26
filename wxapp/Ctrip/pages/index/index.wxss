@@ -11,6 +11,7 @@ page {
 .weui-cells.hotel{
   background-color: #fc5163;
   margin: 20rpx 30rpx;
+  border-radius: 15rpx;
 }
 .weui-cell__bd .hotel_title {
   font-size: 50rpx;
@@ -23,6 +24,7 @@ page {
 .weui-cells.fly{
   background-color: #3a95fe;
   margin: 20rpx 30rpx;
+  border-radius: 15rpx;
 }
 .weui-cell__bd .fly_title {
   font-size: 50rpx;
@@ -35,6 +37,7 @@ page {
 .weui-cells.train{
   background-color: #35b8fc;
   margin: 20rpx 30rpx;
+  border-radius: 15rpx;
 }
 .weui-cell__bd .train_title {
   font-size: 50rpx;
@@ -47,12 +50,26 @@ page {
 .weui-cells.bus{
   background-color: #35b8fc;
   margin: 20rpx 30rpx;
+  border-radius: 15rpx;
 }
 .weui-cell__bd .bus_title {
   font-size: 50rpx;
   color: #fff;
 }
 .weui-cell__bd .bus_content {
+  font-size: 33rpx;
+  color: #fff;
+}
+.weui-cells.tour{
+  background-color: #35b8fc;
+  margin: 20rpx 30rpx;
+  border-radius: 15rpx;
+}
+.weui-cell__bd .tour_title {
+  font-size: 50rpx;
+  color: #fff;
+}
+.weui-cell__bd .tour_content {
   font-size: 33rpx;
   color: #fff;
 }

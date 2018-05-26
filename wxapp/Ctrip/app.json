@@ -3,12 +3,13 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/user/user"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "携程旅游",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#099ce1"
   },
   "tabBar": {
     "color": "#b7b7b7",

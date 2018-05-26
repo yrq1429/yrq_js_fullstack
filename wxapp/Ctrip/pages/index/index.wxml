@@ -1,3 +1,4 @@
+
 <view class="weui-cells hotel">
   <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
@@ -46,11 +47,23 @@
     <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
   </navigator>
 </view>
+<view class="weui-cells tour">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/image/tour.png" />
+    </view>
+    <view class="weui-cell__bd">
+      <view class="tour_title">景点门票</view>
+      <view class="tour_content">景区演出/餐饮/服务</view>
+    </view>
+    <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
+  </navigator>
+</view>
 
 
 <view class="weui-footer weui-footer_fixed-bottom">
   <view class="weui-footer__links">
     <navigator url="" class="weui-footer__link">携程旅游</navigator>
   </view>
-  <view class="weui-footer__text">热线电话：12345678910</view>
+  <view class="weui-footer__text">热线电话：400-830-6666</view>
 </view>

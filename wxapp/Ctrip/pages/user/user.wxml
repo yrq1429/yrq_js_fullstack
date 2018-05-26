@@ -1,0 +1,56 @@
+<view class="user-hd_login">
+    <view class="user-hd_title">登录携程，开启旅程</view>
+    <button class="btn-logo">登录/注册</button>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">查看全部订单</view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    </navigator>
+    <view class="orders">
+        <view class="orders-tour">
+            <!-- <view class="content"> -->
+            <image src="/image/hotel-min.png" class="img-min" />
+            <text class="title">酒店</text>
+            <!-- </view> -->
+        </view>
+        <view class="orders-fly">
+            <!-- <view class="content"> -->
+            <image src="/image/fly-min.png" />
+            <text class="title">机票</text>
+            <!-- </view> -->
+        </view>
+        <view class="orders-car">
+            <!-- <view class="content"> -->
+            <image src="/image/car-min.png" />
+            <text class="title">火车/汽车票</text>
+            <!-- </view> -->
+        </view>
+        <view class="orders-view">
+            <!-- <view class="content"> -->
+            <image src="/image/hotel-min.png" />
+            <text class="title">景点门票</text>
+            <!-- </view> -->
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">优惠券</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的特权</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">领取会员福利</view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">设置</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">关于</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
