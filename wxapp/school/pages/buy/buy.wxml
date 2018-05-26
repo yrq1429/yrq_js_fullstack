@@ -8,7 +8,10 @@
         </view>
         <view class="weui-msg__opr-area">
             <view class="weui-btn-area">
+            <navigator url="/pages/pay/pay" redirect hover-class="className">
                 <button class="weui-btn" type="primary">购买</button>
+            </navigator>
+                
                 <button class="weui-btn" type="default">记录</button>
             </view>
         </view>

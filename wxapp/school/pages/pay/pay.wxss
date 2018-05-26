@@ -1,0 +1,31 @@
+@import "../../templates/template.wxss";
+
+
+.amount-list {
+    display: block;
+}
+.weui-flex {
+    flex-wrap: wrap;
+}
+label{
+    width: 33.3333%;
+    margin-top: 15%;
+}
+label:nth-child(1),label:nth-child(2),label:nth-child(3) {
+    margin-top: 0;
+}
+.weui-check__label {
+    display: flex;
+    height: 4rem;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    justify-content: center;
+    align-items: center;
+}
+.weui-check__label text{
+    display: inline-block;
+}
+.weui-check__label.checked {
+    color: #46c01b;
+    border-color: #46c01b;
+}

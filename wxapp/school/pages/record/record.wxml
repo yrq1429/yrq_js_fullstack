@@ -1,0 +1,26 @@
+<view class="weui-cells">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">开始日期</view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker data-type="startPicker" mode="date" value="2018-05-25" start="2018-05-24" end="2018-05-30" bindchange="bindDateChange">
+                <view class="weui-input">{{startDate}}</view>   
+            </picker>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">结束日期</view>
+        </view>
+            <view class="weui-cell__bd">
+                <picker data-type="endPicker" mode="date" value="{{endDate}}" start="{{endPickerStart}}" end="2018-05-31" bindchange="bindDateChange">
+                    <view class="weui-input">{{endDate}}</view>
+                </picker>
+            </view>
+    </view>
+</view>
+<view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="bindSubmit">确定</button>
+</view>
+

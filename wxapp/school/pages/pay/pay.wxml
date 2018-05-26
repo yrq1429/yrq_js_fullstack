@@ -1,0 +1,20 @@
+<import src="../../templates/template.wxml" />
+<view class="weui-cells">
+  <navigator class="weui-cell" hover-class="weui-cell_active"
+   url="">
+   <template is="dormInfo" data="{{...dorm}}"></template>
+  </navigator>
+  <view class="weui-cell amount-list">
+      <radio-group bindchange="bindAmountChange" class="weui-flex">
+        <label wx:for="{{amounts}}" wx:key="{{index}}">
+            <radio class="weui-check" value="{{item.value}}"/>
+            <view class="weui-check__label {{item.checked?'checked':''}}">
+                <text>￥ {{item.value}}</text>
+            </view>
+        </label>
+      </radio-group>
+  </view>
+</view>
+<view class="weui-btn-area">
+    <button class="weui-btn" type="primary" disabled="{{btn_disabled}}" bindtap="bindSumbit">确定</button>
+</view>
