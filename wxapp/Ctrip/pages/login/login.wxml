@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="login">
+    <view class="phone-num">
+        <text>手机号</text>
+        <input type="text" class="phoneNum"  placeholder="注册或绑定手机号"/>
+    </view>
+    <view class="phone-message">
+        <text>动态码</text>
+        <input type="text" placeholder="短信动态码"/>
+        <!-- <button class="weui-btn mini-btn getNum" type="primary" size="mini" >获取验证码</button> -->
+        <button class="btn-login">获取验证码</button>
+    </view>
+    </view>
+    <button class="loginPwd">登录</button>
+    <view class="addNum">
+        <image src="/image/add.png"/>
+        <text >邀请码</text>  
+    </view>
+    <view class="wechatBtn">
+        <image src="/image/wechat.png"/>
+        <text>使用微信账号登录</text>
+    </view>
+</view>

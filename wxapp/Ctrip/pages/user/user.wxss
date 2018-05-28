@@ -52,4 +52,6 @@
     color: #bababa;
     text-align: center;
 }
-
+.btn-logo {
+    text-align: center;
+}

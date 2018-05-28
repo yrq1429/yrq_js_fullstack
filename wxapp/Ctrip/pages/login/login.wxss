@@ -1,0 +1,92 @@
+page {
+    background-color: #efefef;
+}
+.login {
+    height: 250rpx;
+    background-color: #ffffff;
+    margin-top: 40rpx;
+    padding-left: 20rpx;
+    padding-top: 20rpx;
+    position: relative;
+}
+text {
+    font-size: 40rpx;
+}
+input {
+    vertical-align: middle;
+    margin-top: 10rpx;
+}
+.phone-num {
+     border-bottom: 1px solid #d8d8d8;
+     padding: 25rpx 0 30rpx 0;
+     display: flex;
+     justify-content: left;
+}
+.phone-num, text {
+    padding-right: 80rpx;
+}
+.phoneNum {
+    flex: 1;
+}
+.phone-message {
+    padding: 30rpx 0 0 0;
+    display: flex;
+    /* text-align: center; */
+    justify-content: left;
+}
+.phone-message text {
+    padding-right: 80rpx;
+}
+.login input {
+    float: right;
+}
+.btn-login {
+    position: absolute;
+    top: 158rpx;
+    right: 20rpx;
+    color: #07a0dc;
+    border-color:#07a0dc;
+}
+.loginPwd {
+    background: #ff9a14;
+    color:#ffffff;
+    margin: 88rpx 20rpx 0 20rpx;
+}
+.addNum {
+    margin-left: 20rpx;
+    margin-top: 30rpx;
+}
+.addNum image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.addNum text{
+    color: #767676;
+    font-size: 30rpx;   
+    margin-top: 20rpx;
+    margin-left: 10rpx;
+}
+.wechatBtn {
+    height: 88rpx;
+    width: 520rpx;
+    border: 1px solid #55c45b;
+    border-radius: 88rpx;
+    color: #55c45b;
+    position: absolute;
+    bottom: 100rpx;
+    left: 120rpx;
+}
+.wechatBtn image {
+    height: 50rpx;
+    width: 50rpx;
+    vertical-align: middle;
+    margin-left: 70rpx;
+    padding-top: 20rpx;
+}
+.wechatBtn text {
+    vertical-align: middle;
+    /* text-align: center */
+    padding-top: 20rpx;
+}
+
+

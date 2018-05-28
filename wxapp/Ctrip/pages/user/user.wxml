@@ -1,6 +1,7 @@
 <view class="user-hd_login">
     <view class="user-hd_title">登录携程，开启旅程</view>
-    <button class="btn-logo">登录/注册</button>
+    <!-- // <button class="btn-logo">登录/注册</button> -->
+     <navigator class="btn-logo" url="/pages/login/login">登录/注册</navigator>
 </view>
 <view class="weui-cells weui-cells_after-title">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
