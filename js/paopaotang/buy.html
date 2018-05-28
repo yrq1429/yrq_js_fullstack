@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 红色的4个库存
+    蓝色的6库存 -->
+    <!-- var phone = {
+        blue:6,
+        red:4
+    }
+    select onchange 事件  数量不写，提交按钮会禁用 disabled
+    先禁用，再启用
+    红色    当数量为5   oninput 事件    onchange    按钮数量不足 disabled -->
+    <!-- 蓝色    当数量为5   加入购物车 -->
+
+    <div>
+        选择颜色：
+        <select name="颜色" id="colorSelect">
+            <option value="blue">蓝色</option>
+            <option value="red">红色</option>
+        </select>
+
+        输入购买数量：
+        <input id="numInput" type="text">
+        <div>
+            您选择了颜色：
+            <span id="color"></span>
+            您输入了数量:
+            <span id="num"></span>
+        </div>
+
+        <button disabled="disabled" id="button" value=""/>
+
+    </div>
+
+    <script>
+        var phone = {
+            blue:6,
+            red:4
+        }
+        const oSelect = document.querySelector('#colorSelect');
+        const oNumInput = document.querySelector('#numInput');
+        const oColorSpan = document.querySelector('#color');
+        const oNum = document.querySelector('#num');
+        const button = document.querySelector('#button');
+        oSelect.addEventListener('change', function (event) {
+            showChooseResult();
+        }, false);
+        oNumInput.addEventListener('input', function (event) {
+            showChooseResult();
+        })
+
+        function showChooseResult() {
+            const strColor = oSelect.value;
+            const intNum = oNumInput.value;
+            oColorSpan.innerHTML = strColor;
+            oNum.innerHTML = intNum;
+            // alert(phone.blue)
+            console.log(typeof (intNum));
+            // if (typeof(intNum) != "number") {
+            //     button.disabled = true;
+            //     document.querySelector('#button').innerHTML = '数量应该为数字';
+            // }else 
+            if (intNum > phone.blue && strColor === 'blue') {
+                button.disabled = true;
+                document.querySelector('#button').innerHTML = '余额不足'
+            }else if (intNum > phone.red && strColor==='red') {
+                button.disabled = true;
+                document.querySelector('#button').innerHTML = '余额不足'
+            }
+            else {
+                button.disabled = false;
+                document.querySelector('#button').innerHTML = '添加购物车'
+            }
+        }
+    </script>
+</body>
+
+</html>
