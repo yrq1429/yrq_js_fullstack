@@ -1,0 +1,100 @@
+page {
+    background-color: #ecf8fa;
+}
+.trainBg {
+    width: 100%;
+}
+.trainBg image {
+    width: 100%;
+    height: 220rpx;
+}
+.ad {
+    width: 100%;
+    background-color: #ecf8fa;
+    position: relative;
+}
+.ad text {
+    color: #1296db;
+    font-size: 30rpx;
+    display: block;
+    padding: 10rpx 0 25rpx 25rpx;
+    letter-spacing:8rpx;
+}
+.ad image {
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    top: 0rpx;
+    right: 20rpx;
+}
+.trainContent {
+    background-color: #fff;
+    height: 580rpx;
+    border-bottom: 10px solid #ecf8fa
+}
+.content {
+    display: flex;
+    margin-left: 40rpx;
+    justify-content: space-around;
+    margin-right: 40rpx;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #fff;
+    padding-top: 50rpx;
+}
+.onTrain,.outTrain {
+    padding-top: 30rpx;
+}
+.content .changeImg image {
+    width: 60rpx;
+    height: 60rpx;
+    padding-top: 30rpx;
+}
+.onTrain {
+    flex: 1;
+    text-align: left;
+}
+.changeImg {
+    flex: 1;
+    text-align: center
+}
+.outTrain {
+    flex: 1;
+    text-align: right;
+}
+.goDate {
+    border-bottom: 1px solid #dcdcdc;
+    margin-left: 45rpx;
+    margin-right: 45rpx;
+    padding: 30rpx 0;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+.chooseIcon {
+    position: absolute;
+    top: 65rpx;
+    right: 0rpx;
+}
+.chooseWhat {
+    margin-left: 45rpx;
+    font-size: 34rpx;
+    margin-right: 45rpx;
+    padding-bottom: 50rpx;
+}
+.rightChoose {
+    float: right;
+}
+.search {
+    background: #ff9a14;
+    color:#ffffff;
+    margin: 20rpx 20rpx 0rpx 20rpx;
+}
+.loginPwd {
+    margin-bottom: 50rpx;
+}
+.search-train {
+    background-color: #fff;
+}
+.search-train image {
+    width: 80rpx;
+    height: 80rpx;
+}

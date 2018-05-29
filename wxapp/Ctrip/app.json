@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/user/user",
+    "pages/trainbuy/trainbuy",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/user/user",
+    "pages/logs/logs",
+    "pages/login/login"
     
   ],
   "window": {
