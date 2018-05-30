@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+</head>
+
+<body>
+    <form action="http://xxx.com/register" id="registerForm" method="post">
+        <div class="field">
+            请输入用户名:
+            <input type="text" name="username">
+        </div>
+        <div class="field">
+            请输入密码:
+            <input type="password" name="password">
+        </div>
+        <div class="field">
+            请输入手机号:
+            <input type="tel" name="phoneNumber">
+        </div>
+        <button>提交</button>
+    </form>
+</body>
+<script src="./validator.js"></script>
+<script>
+    const registerForm = document.getElementById('registerForm');
+    registerForm.onsubmit = function () {
+        var errorMsg = validateFunc();
+        if (errorMsg) {
+            alert(errorMsg);
+            return false
+        }
+        return true;
+    }
+
+    //  具体的表单验证 -> stragister 集合了验证逻辑(抽象的去写验证)  
+    // 抽象 validateFunc 还是有些具体的代码
+    // 什么元素(?) 什么规则(stragister) 做什么验证(key)
+    function validateFunc() {
+        // 验证对象   验证的函数任务中，已经有了验证策略类，有很多的不确定的数量表单元素及规则，要去验证
+        // 中介者模式，......交给中介者对象，会轻松很多
+        // 要一个验证对象，专业的，将要验证的元素交给他，验证的过程，抽象
+        // 如何让元素给对象
+        var validator = new Validator();
+        validator.add(registerForm.username, 'isNonEmpty', '用户名不能为空');
+        validator.add(registerForm.password, 'minLength:6', '密码不能少于6位');
+        validator.add(registerForm.phoneNumber, 'isMobilPhone', '手机格式不正确');
+        var errorMsg = validator.start();
+        return errorMsg;
+    }
+    // 将要验证的表单元素加进一个数组
+    // 开启一一验证 strategies
+    function Validator() {
+        this.cache = [];
+    }
+    Validator.prototype = {
+        // rule 规则名:6？+ 
+        add: function (dom, rule, errorMsg) {
+            var ary = rule.split(':');
+            this.cache.push(function () {
+                var strategy = ary.shift();
+                ary.unshift(dom.value);
+                ary.push(errorMsg);
+                //  [value, params, errorMsg] strategy 参数顺序
+                return strategies[strategy].apply(dom, ary)
+            })
+        },
+        start: function () {
+            for (var i = 0, validatorFunc; validatorFunc = this.cache[i++];) {
+                var msg = validatorFunc();
+                if (msg) {
+                    return msg;
+                }
+            }
+        }
+    }
+
+
+</script>
+
+</html>
