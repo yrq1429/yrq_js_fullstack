@@ -55,3 +55,18 @@
 .btn-logo {
     text-align: center;
 }
+.userInfo {
+    width: 100%;
+    height: 150rpx;
+    padding-top: 88rpx;
+    padding-left: 40rpx;
+}
+.userInfo image{
+    width: 100rpx;
+    height: 100rpx;
+}
+.userInfo text {
+    font-size: 30rpx;
+    color: #fe9913;
+    vertical-align: middle;
+}

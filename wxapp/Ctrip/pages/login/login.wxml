@@ -11,7 +11,7 @@
         <button class="btn-login">获取验证码</button>
     </view>
     </view>
-    <button class="loginPwd">登录</button>
+    <button class="loginPwd" bindtap="login">登录</button>
     <view class="addNum">
         <image src="/image/add.png"/>
         <text >邀请码</text>  

@@ -1,0 +1,141 @@
+page {
+    background: linear-gradient(#7b72af, #0466bf );
+}
+.container {
+    width: 750rpx;
+    height: 100%;
+}
+.flyTab {
+    height: 100rpx;
+    width: 750rpx;
+    margin-top: 30rpx;
+    margin-left: 125rpx;
+}
+.countryIn,
+.countryOut {
+    width: 250rpx;
+    border: 1px solid #fff;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    padding: 10rpx 0;  
+}
+.countryIn {
+    border-radius: 20rpx 0 0 20rpx;
+}
+.countryOut {
+    border-radius: 0 20rpx 20rpx 0;
+}
+.active {
+    background-color: #fff;
+    color: #000;
+}
+.flyContent {
+    width: 100%;
+    height: 700rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+.content {
+    display: flex;
+    margin-left: 40rpx;
+    justify-content: space-around;
+    margin-right: 40rpx;
+    
+    background-color: #fff;
+    padding-top: 50rpx;
+}
+
+.content .changeImg image {
+    width: 80rpx;
+    height: 80rpx;
+    transform: rotate(45deg);
+}
+.onFly {
+    flex: 1;
+    text-align: left;
+    border-bottom: 1px solid #dcdcdc;
+}
+.changeImg {
+    flex: 1;
+    text-align: center
+}
+.chooseDate .changeImgfly image {
+    width: 80rpx;
+    height: 80rpx;
+    transform: rotate(45deg);
+}
+.outFly {
+    flex: 1;
+    text-align: right;
+    border-bottom: 1px solid #dcdcdc;
+}
+.chooseDate {
+    display: flex;
+}
+.changeImgfly {
+    flex: 1;
+}
+.goDate {
+    flex: 1;
+    width: 34%;
+    height: 130rpx;
+    border-bottom: 1px solid #dcdcdc;
+}
+.backDate {
+    flex: 1;
+    text-align: right;
+    width: 34%;
+    height: 130rpx;
+    border-bottom: 1px solid #dcdcdc;
+}
+.goDate text{
+    font-size: 28rpx;
+    color: #dcdcdc;
+}
+.backDate text{
+    font-size: 28rpx;
+    color: #dcdcdc;
+}
+.chooseGoDate{
+    font-size: 44rpx;
+}
+.chooseDate {
+    margin-left: 40rpx;
+    margin-right: 30rpx;
+}
+.chooseSitPerson {
+    display: flex;
+    margin-left: 40rpx;
+    margin-right: 30rpx;
+}
+.chooseSit {
+    flex: 1;
+    border-bottom: 1px solid #dcdcdc;
+    margin-top: 60rpx;
+    margin-bottom: 40rpx;
+}
+.choosePerson {
+    flex: 1;
+    border-bottom: 1px solid #dcdcdc;
+    margin-top: 60rpx;
+    font-size: 25rpx;
+    margin-bottom: 40rpx;
+}
+.changeImgSit {
+    flex: 1;
+    text-align: right;
+    
+}
+.chooseSitPerson .changeImgSit image {
+    width: 80rpx;
+    height: 80rpx;
+    transform: rotate(45deg);
+}
+.loginPwd .search {
+    width: 80%;
+    margin-top: 50rpx;
+    background-color: #fe9913;
+    margin-bottom: 50rpx;
+    color: #fff;
+}

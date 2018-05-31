@@ -12,7 +12,7 @@
   </navigator>
 </view>
 <view class="weui-cells fly">
-  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/flybuy/flybuy" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/image/fly.png" />
     </view>
@@ -24,7 +24,7 @@
   </navigator>
 </view>
 <view class="weui-cells train">
-  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/trainbuy/trainbuy" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/image/train.png" />
     </view>
@@ -36,7 +36,7 @@
   </navigator>
 </view>
 <view class="weui-cells bus">
-  <navigator class="weui-cell weui-cell_access head" url="/pages/home/auth/auth" hover-class="weui-cell_active">
+  <navigator class="weui-cell weui-cell_access head" url="/pages/trainbuy/trainbuy" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <image src="/image/bus.png" />
     </view>

@@ -1,0 +1,35 @@
+<view class="flyTab">
+    <view class="countryIn {{status=='1'?'active':''}}" data-status="1" bindtap="showStatus">国内</view>
+    <view class="countryOut {{status=='2'?'active':''}}" data-status="2" bindtap="showStatus">国际/港澳台</view>
+</view>
+<view class="flyContent" wx:if="{{status}}">
+    <view class="content">
+        <view class="onFly">{{from}}</view>
+        <view class="changeImg">
+            <image src="/image/changefly.png" />
+        </view>
+        <view class="outFly">{{to}}</view>
+    </view>
+    <view class="chooseDate">
+    <view class="goDate">
+        <text>去程</text>
+        <view class="chooseGoDate">5月31日</view>
+    </view>
+    <view class="changeImgfly">
+        <!-- <image src="/image/changefly.png" /> -->
+    </view>
+    <view class="backDate">
+        <text>返程</text>
+        <view class="chooseOutDate">--</view>
+    </view>
+    </view>
+    <view class="chooseSitPerson">
+        <view class="chooseSit">经济舱</view>
+        <view class="changeImgSit">
+        </view>
+        <view class="choosePerson">{{sit}}</view>
+    </view>
+    <view class="loginPwd">
+        <button class="search">搜索</button>
+    </view>
+</view>

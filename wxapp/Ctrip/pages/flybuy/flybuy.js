@@ -1,11 +1,15 @@
-// pages/user/user.js
+// pages/flybuy/flybuy.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    noLogin:false
+    status:1,
+    from:"上海",
+    to:"北京",
+    sit:""
+
   },
 
   /**
@@ -14,22 +18,25 @@ Page({
   onLoad: function (options) {
   
   },
-  back(){
-    wx.showModal({
-      title: '提示',
-      content: '是否退出登录',
-      success: (res)=>{
-        this.setData({
-          noLogin: true
-        })
-      },
-      fail:function () {
-        
-      }
-    })
+  showStatus(e) {
+    const status = e.currentTarget.dataset.status;
+    if (status == 1) {
+      this.setData({
+        status: status,
+        to:"上海",
+        sit:''
+      })
+    }
+    if (status == 2) {
+      this.setData({
+        status: status,
+        to: "香港",
+        sit: "1成人0儿童/婴儿"
+      })
+    }
+    
     
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
