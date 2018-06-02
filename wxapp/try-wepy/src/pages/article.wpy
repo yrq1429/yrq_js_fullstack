@@ -1,0 +1,13 @@
+<style lang="less"></style>
+<template >
+    <view></view>
+</template>
+<script>
+    import wepy from 'wepy'
+
+    export default class Article extends wepy.page{
+        data = {
+
+        }
+    }
+</script>
