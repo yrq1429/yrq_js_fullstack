@@ -1,13 +1,13 @@
 {
   "pages": [
-   "pages/user/user",
-    "pages/index/index",
     
+    "pages/index/index",
+    "pages/user/user",
     "pages/logs/logs",
     "pages/login/login",
     "pages/trainbuy/trainbuy",
-    "pages/flybuy/flybuy"
-    
+    "pages/flybuy/flybuy",
+    "pages/trainBuyContent/trainBuyContent"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -5,9 +5,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    addShow:true,
+    from:"上海虹桥",
+    to:"北京",
+    addtext:'',
+    addShowto:true,
+    addtextto:''
   },
+  from(){
+    this.setData({
+      addShow:false
+    })
+  },
+  to() {
+    this.setData({
+      addShowto: false
+    })
+  },
+  setInput: function (e) {
+    // console.log(e.detail.value);
+    this.setData({
+      addText: e.detail.value
+    })
+  },
+  setInputto: function (e) {
+    // console.log(e.detail.value);
+    this.setData({
+      addTextto: e.detail.value
+    })
+  },
+  addTodo: function (e) {
+    this.setData({
+      from: this.data.addText,
+      addShow:true
+    })
+  },
+  addTodoto: function (e) {
+    this.setData({
+      to: this.data.addTextto,
+      addShowto: true
+    })
+  },
+  addTodoShow: function (e) {
+    this.setData({
+      addShow: false
+    })
 
+
+  },
+  addTodoHide: function (e) {
+    this.setData({
+      addShow: true
+    })
+
+  },
+  addTodoHideto: function (e) {
+    this.setData({
+      addShowto: true
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

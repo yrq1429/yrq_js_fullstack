@@ -87,6 +87,10 @@ page {
     background: #ff9a14;
     color:#ffffff;
     margin: 20rpx 20rpx 0rpx 20rpx;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 20rpx;
 }
 .loginPwd {
     margin-bottom: 50rpx;
@@ -97,4 +101,28 @@ page {
 .search-train image {
     width: 80rpx;
     height: 80rpx;
+}
+.addForm{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  /* .4透明度 */
+  background: rgba(0, 0, 0, .4);
+}
+.addForm .addForm-div{
+  background: #ffffff;
+  padding: 30rpx;
+}
+.addForm .addForm-div .weui-input{
+  border: 1px solid #ccc;
+  border-radius: 15rpx;
+  padding: 5rpx 20rpx;
+  font-size: 12pt;
+  margin-bottom: 10rpx;
+}
+.hide{
+  display: none;
 }

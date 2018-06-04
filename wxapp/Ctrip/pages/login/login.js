@@ -15,10 +15,16 @@ Page({
     noLogin:true
   },
   login(){
+    var pages = getCurrentPages();
+    var Page = pages[pages.length - 1];//当前页
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var info = prevPage.data.noLogin;
+    console.log(info);
     wx.navigateBack({
       delta: 1, // 回退前 delta(默认为1) 页面
       success: function(res){
-        noLogin:false
+        noLogin:false,
+        !info
       },
       fail: function() {
         // fail

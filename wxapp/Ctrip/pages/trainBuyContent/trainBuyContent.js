@@ -1,33 +1,28 @@
-// pages/user/user.js
+import {
+  API_BASE
+} from '../../API/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    noLogin:true
+    trainListContent: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-  back(){
-    wx.showModal({
-      title: '提示',
-      content: '是否退出登录',
-      success: (res)=>{
+    wx.request({
+      url: API_BASE,
+      // url: "https://www.easy-mock.com/mock/5b1266782c0adb523338b0f7/#!method=get",
+      success: (res) => {
         this.setData({
-          noLogin: true
+          trainListContent: res.data.data.trainList,
         })
-      },
-      fail:function () {
-        
       }
     })
-    
   },
 
   /**

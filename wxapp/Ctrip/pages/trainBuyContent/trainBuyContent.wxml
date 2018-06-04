@@ -1,0 +1,21 @@
+<view class="chooseDate"></view>
+<view class="ticketContent" wx:for="{{trainListContent}}" wx:key="{{item.id}}">
+    <view class="fromInfo">
+        <view class="fromTime">{{item.fromTime}}</view>
+        <view class="fromAddr">{{item.from}}</view>
+        <view class="secondSeat">二等座{{item.secondSeat}}张</view>
+    </view>
+    <view class="ticketInfo">
+        <view class="trainNum">{{item.trainNum}}</view>
+        <image src="/image/lianjie.png"/>
+        <view class="needTime">{{item.needTime}}</view>
+        <view class="firstSeat">一等座{{item.firstSeat}}张</view>
+    </view>
+    <view class="toInfo">
+        <view class="toTime">{{item.toTime}}</view>
+        <view class="toAddr">{{item.to}}</view>
+        <view class="businessSeat">商务座{{item.businessSeat}}张</view>
+    </view>
+    <view class="price">{{item.price}}</view>
+</view>
+<!-- #e5e5e5 -->

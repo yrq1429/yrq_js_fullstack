@@ -7,11 +7,11 @@
 </view>
 <view class="trainContent">
     <view class="content">
-        <view class="onTrain">上海</view>
+        <view class="onTrain" bindtap="from">{{from}}</view>
         <view class="changeImg">
             <image src="/image/changeAddr.png" />
         </view>
-        <view class="outTrain">北京</view>
+        <view class="outTrain" bindtap="to">{{to}}</view>
     </view>
     <view class="goDate">
         <view class="chooseDate">5月30日</view>
@@ -28,7 +28,7 @@
         </checkbox-group>
     </view>
     <view class="loginPwd">
-    <button class="search">查询</button>
+    <navigator class="search"  url="/pages/trainBuyContent/trainBuyContent">查询</navigator>
     </view>
 </view>
 <view class="weui-cells weui-cells_after-title">
@@ -40,3 +40,21 @@
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
 </view>
+<view class="addForm {{addShow?'hide':''}}">
+    <view class="addForm-div">
+      <input type="text" placeholder="请输入地点" class="weui-input" bindinput="setInput" value="{{addText}}"/>
+      <view class="addForm-btn">
+        <button class="weui-btn mini-btn" type="warn" size="mini" bindtap="addTodo">确定</button>
+        <button class="weui-btn mini-btn" type="default" size="mini" bindtap="addTodoHide">取消</button>
+      </view>
+    </view>
+  </view>
+<view class="addForm {{addShowto?'hide':''}}">
+    <view class="addForm-div">
+      <input type="text" placeholder="请输入地点" class="weui-input" bindinput="setInputto" value="{{addText}}"/>
+      <view class="addForm-btn">
+        <button class="weui-btn mini-btn" type="warn" size="mini" bindtap="addTodoto">确定</button>
+        <button class="weui-btn mini-btn" type="default" size="mini" bindtap="addTodoHideto">取消</button>
+      </view>
+    </view>
+  </view>
