@@ -28,7 +28,7 @@
         </checkbox-group>
     </view>
     <view class="loginPwd">
-    <navigator class="search"  url="/pages/trainBuyContent/trainBuyContent">查询</navigator>
+    <navigator class="search"  url="/pages/trainBuyContent/trainBuyContent?from={{from}}&to={{to}}">查询</navigator>
     </view>
 </view>
 <view class="weui-cells weui-cells_after-title">

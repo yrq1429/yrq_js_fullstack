@@ -1,5 +1,5 @@
 <view class="chooseDate"></view>
-<view class="ticketContent" wx:for="{{trainListContent}}" wx:key="{{item.id}}">
+<view class="ticketContent" wx:for="{{searchedList}}" wx:key="{{item.id}}">
     <view class="fromInfo">
         <view class="fromTime">{{item.fromTime}}</view>
         <view class="fromAddr">{{item.from}}</view>

@@ -5,9 +5,11 @@
     "pages/user/user",
     "pages/logs/logs",
     "pages/login/login",
-    "pages/trainbuy/trainbuy",
     "pages/flybuy/flybuy",
+    "pages/trainbuy/trainbuy",
+    "pages/busBuy/busBuy",
     "pages/trainBuyContent/trainBuyContent"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
