@@ -8,13 +8,13 @@
 <view class="trainContent">
     <view class="content">
         <view class="onTrain" bindtap="from">{{from}}</view>
-        <view class="changeImg">
+        <view class="changeImg" bindtap="change">
             <image src="/image/changeAddr.png" />
         </view>
         <view class="outTrain" bindtap="to">{{to}}</view>
     </view>
     <view class="goDate">
-        <view class="chooseDate">5月30日</view>
+        <picker class="chooseDate" mode="date" data-type="startPicker" value="2018-05-25" start="2018-05-30" end="2018-06-30" bindchange="bindDateChange"><view class="weui-input">{{startDate}}</view></picker>
         <view class="weui-cell__ft weui-cell__ft_in-access chooseIcon"></view>
     </view>
     <view class="chooseWhat">
@@ -28,7 +28,7 @@
         </checkbox-group>
     </view>
     <view class="loginPwd">
-    <navigator class="search"  url="/pages/trainBuyContent/trainBuyContent?from={{from}}&to={{to}}">查询</navigator>
+    <navigator class="search"  url="/pages/trainBuyContent/trainBuyContent?from={{from}}&to={{to}}&trainTime={{startDate}}">查询</navigator>
     </view>
 </view>
 <view class="weui-cells weui-cells_after-title">

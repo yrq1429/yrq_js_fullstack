@@ -1,5 +1,5 @@
 <view class="chooseDate"></view>
-<view class="ticketContent" wx:for="{{searchedList}}" wx:key="{{item.id}}">
+<navigator class="ticketContent" url="/pages/trainPay/trainPay?from={{item.from}}&to={{item.to}}&trainNum={{item.trainNum}}&secondSeat={{item.secondSeat}}&fromTime={{item.fromTime}}&firstSeat={{item.firstSeat}}&businessSeat={{item.businessSeat}}&toTime={{item.toTime}}&needTime={{item.needTime}}&trainTime={{item.trainTime}}&firstPrice={{item.firstPrice}}&businessPrice={{item.businessPrice}}&price={{item.price}}" wx:for="{{searchedList}}" wx:key="{{item.id}}">
     <view class="fromInfo">
         <view class="fromTime">{{item.fromTime}}</view>
         <view class="fromAddr">{{item.from}}</view>
@@ -17,5 +17,5 @@
         <view class="businessSeat">商务座{{item.businessSeat}}张</view>
     </view>
     <view class="price">{{item.price}}</view>
-</view>
+</navigator>
 <!-- #e5e5e5 -->

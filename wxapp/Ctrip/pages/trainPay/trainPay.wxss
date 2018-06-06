@@ -1,0 +1,94 @@
+.header{
+    background-color: #099ce1;
+    display: flex;
+    color: #fff;
+    padding: 30rpx;
+}
+.fromInfo {
+    flex: 1;
+    text-align: left;
+}
+.trainNum {
+    flex: 1;
+    text-align: center;
+    padding-top: 60rpx;
+}
+.toInfo {
+    flex: 1;
+    text-align: right;
+}
+.passage image {
+    width: 100%;
+    height: 500rpx;
+}
+.price {
+    display: flex;
+    /* padding: 10rpx 30rpx; */
+    flex-direction: row;
+    justify-content:space-around;
+}
+.secondPrice {
+    flex: 1;
+    background-color: #f7f7f7;
+    margin-right: 10rpx;
+    text-align: center;
+    padding: 15rpx 0;
+}
+.firstPrice {
+    flex: 1;
+    background-color: #f7f7f7;
+    margin-right: 10rpx;
+    text-align: center;
+    padding: 15rpx 0;
+}
+.businessPrice {
+    flex: 1;
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 15rpx 0;
+}
+.isSelect {
+    border: 1px solid #47b5ed;
+    background-color: #abc;
+}
+.firstSeatPrice,.businessSeatPrice,.secondSeatPrice {
+    color: #696b6c;
+}
+.bottomPay {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* height: 80rpx; */
+    border: 1px solid #eee;
+}
+.bottomPay .totalPrice {
+    color: red;
+}
+.content {
+    position: relative;
+    padding-top: 30rpx;
+}
+.pay {
+    position: absolute;
+    top: 45rpx;
+    bottom: 10rpx;
+    right: 10rpx;
+    width: 200rpx;
+    height: 80rpx;
+    background-color: #fd9910;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+}
+.totalPrice {
+    position: absolute;
+    top: 60rpx;
+    bottom: 30rpx;
+    left: 180rpx;
+}
+.content text {
+    display: inline-block;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+}

@@ -1,0 +1,43 @@
+<view class="header">
+    <view class="fromInfo">
+        <view class="from">{{from}}</view>
+        <view class="fromTime">{{fromTime}}</view>
+        <view class="onDate">{{trainTime}}</view>
+    </view>
+    <view class="trainNum">{{trainNum}}</view>
+    <view class="toInfo">
+        <view class="to">{{to}}</view>
+        <view class="toTime">{{toTime}}</view>
+        <view class="onDate">{{trainTime}}</view>
+    </view>
+</view>
+<view class="price">
+<view class="secondPrice {{status=='1'?'isSelect':''}}" data-status="1" bindtap="showStatus">
+    <view class="secondSeat">二等座</view>
+    <view class="secondSeatPrice">￥{{price}}</view>
+    <view class="secondSeatNum">{{secondSeat}}</view>
+    
+</view>
+<view class="firstPrice {{status=='2'?'isSelect':''}}" data-status="2" bindtap="showStatus">
+    <view class="firstSeat">一等座</view>
+    <view class="firstSeatPrice">￥{{firstPrice}}</view>
+    <view class="firstSeatNum">{{firstSeat}}</view>
+    
+</view>
+<view class="businessPrice {{status=='3'?'isSelect':''}}" data-status="3" bindtap="showStatus">
+    <view class="businessSeat">商务座</view>
+    <view class="businessSeatPrice">￥{{businessPrice}}</view>
+    <view class="businessSeatNum">{{businessSeat}}</view>
+    
+</view>
+</view>
+<view class="passage">
+    <image src="/image/passage.png"/>
+</view>
+<view class="bottomPay">
+    <view class="content">
+    <text>订单总额</text>
+    <view class="totalPrice">￥{{totalPrice}}</view>
+    <view class="pay" bindtap="goToPay">去支付</view>
+    </view>
+</view>

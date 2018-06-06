@@ -10,7 +10,19 @@ Page({
     to:"北京",
     addtext:'',
     addShowto:true,
-    addtextto:''
+    addtextto:'',
+    startDate: '2018-06-02',
+  },
+  bindDateChange(e) {
+    const type = e.currentTarget.dataset.type;
+    if (type == 'startPicker') {
+      this.setData({
+        startDate: e.detail.value,
+      })
+    } else {
+      this.setData({
+      })
+    }
   },
   from(){
     this.setData({
@@ -71,7 +83,12 @@ Page({
   onLoad: function (options) {
   
   },
-
+  change(){
+    this.setData({
+      from:this.data.to,
+      to:this.data.from
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
