@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100%;
+        }
+        .aside {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background: #f66;
+        }
+        .main {
+            height: 200px;
+            background: #fcc;                    
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        自适应的两栏式布局 float 离开文档流  aside main 同一BFC 根元素
+        BFC布局规则第3条：每个BFC元素盒子的左边要与包含box的左边相接触
+                第4条：BFC区域不会与float box 重叠
+    -->
+    <div class="aside"></div>
+    <div class="main"></div>
+</body>
+</html>
