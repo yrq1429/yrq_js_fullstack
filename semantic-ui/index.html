@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>semantic-ui</title>
+    <link href="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        background-color: #dadada;
+    }
+    body > .grid {
+        height: 100%;
+    }
+    .column {
+        max-width: 450px;
+    }
+</style>
+<body>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <h2 class="ui teal image header">
+                <img src="http://www.semantic-ui.cn/examples/assets/images/logo.png
+" alt="" class="image">
+                <div class="content">Log-in your account</div>
+            </h2>
+            <form action="" method="POST" class="ui large form">
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="email" placeholder="E-mail address">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" id="" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="ui fluid large teal submit button">Login</div>
+                    <div class="ui error message">
+                        <ul class="list">
+                            <li>Please enter your email</li>
+                            <li>Please enter a valid email</li>
+                            <li>Please enter your password</li>
+                            <li>Your password must be at least 6 characters</li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <div class="ui message">
+                New to us? <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://www.semantic-ui.cn/examples/assets/library/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script>
+    // 前端开发的能力，身边十八般武艺 PC站 后台开发 semantic-ui 简单 写就是了
+    // 表单里面的 提交，校验
+    // bootstrap semantic-ui 设计哲学
+    // semantic-ui : 用最简单的类名词汇构建ui, JS模块配置一下就可以用
+    $(document)
+        .ready(function () {
+            $('.ui.form')
+                .form({
+                    fields: {
+                        email: {
+                            identifier: 'email',
+                            rules: [
+                                {
+                                    type: 'empty',
+                                    prompt: 'Please enter your email'
+                                },
+                                {
+                                    type: 'email',
+                                    prompt: 'Please enter a valid email'
+                                }
+                            ]
+                        },
+                        password: {
+                            identifier: 'password',
+                            rules:[
+                                {
+                                    type: 'empty',
+                                    prompt: 'Please enter your password '
+                                },
+                                {
+                                    type: 'length[6]',
+                                    prompt: 'Your password must be at lease 6 character'
+                                }
+                            ]
+                        }
+                    }
+                })
+        })
+    </script>
+</body>
+
+</html>
