@@ -16,7 +16,7 @@
         <image src="/image/add.png"/>
         <text >邀请码</text>  
     </view>
-    <view class="wechatBtn">
+    <view class="wechatBtn" bindtap="wxLogin">
         <image src="/image/wechat.png"/>
         <text>使用微信账号登录</text>
     </view>

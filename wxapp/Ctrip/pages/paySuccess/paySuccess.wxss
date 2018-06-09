@@ -1,0 +1,42 @@
+.paySuccessContent {
+    background-color: #fff;
+}
+.header {
+    width: 100%;
+    height: 400rpx;
+    margin-top: 166rpx;
+}
+.paySucessIcon image {
+    width: 110rpx;
+    height: 110rpx;
+    margin-left: 310rpx;
+}
+.paySuccessText {
+    color: #19ad17;
+    letter-spacing: 10rpx;
+    margin-left: 300rpx;
+    font-size: 30rpx;
+}
+.successPriceText {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 10rpx;
+    font-size: 30rpx;
+}
+.successPrice {
+    width: 100%;
+    font-size: 60rpx;
+    letter-spacing: 5rpx;
+    text-align: center;
+    font-weight: bold;
+}
+.successBtn {
+    width: 400rpx;
+    height: 66rpx;
+    border: solid #19ad17 1px;
+    text-align: center;
+    line-height: 66rpx;
+    margin-left: 188rpx;
+    margin-top: 260rpx;
+    color: #19ad17;
+}

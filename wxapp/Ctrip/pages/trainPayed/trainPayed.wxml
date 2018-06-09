@@ -1,0 +1,17 @@
+<view class="trainPayedContent" wx:for="{{trainedList}}" wx:key="{{item}}">
+    <view class="fromTo">
+        <view class="from">{{item.from}}</view>
+        <view class="toLogo">
+        <image src="/image/to.png"/>
+        </view>
+        <view class="to">{{item.to}}</view>
+    </view><view class="priceContent">
+        <view class="price">{{item.totalPrice}}</view>
+        <view class="payStatus">已完成</view>
+    </view>
+    <view class="seatContent">
+        <view class="trainNum">{{item.trainNum}}</view>
+        <view class="seatNum">10车022号</view>
+    </view>
+    <view class="date">{{item.trainTime}}</view>
+</view>

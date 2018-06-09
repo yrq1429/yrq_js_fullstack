@@ -1,61 +1,49 @@
-// pages/login/login.js
+// pages/paySucess/paySucess.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    totalPrice:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-  login(){
-    // var pages = getCurrentPages();
-    // var Page = pages[pages.length - 1];//当前页
-    // var prevPage = pages[pages.length - 2];  //上一个页面
-    // var info = prevPage.data.noLogin;
-    // console.log(info);
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-      success:(res)=>{
+    wx.getStorage({
+      key: 'totalPrice',
+      success: (res) => {
         this.setData({
-          noLogin:false
+          totalPrice: res.data,
         })
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
       }
     })
   },
-  wxLogin () {
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-      success:(res)=>{
-        this.setData({
-          noLogin:false
-        })
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
   
+  },
+  navTo () {
+    // wx.navigateBack({
+    //   url: '/pages/trainbuy/trainbuy',
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function() {
+    //     // fail
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
+    wx.navigateBack({
+      delta: 3
+    })
   },
 
   /**

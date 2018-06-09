@@ -1,6 +1,7 @@
 // pages/trainPay/trainPay.js
+const app = getApp();
 Page({
-
+  
   /**
    * 页面的初始数据
    */
@@ -19,7 +20,7 @@ Page({
     businessPrice: '',
     firstSeat:'',
     status: '1',
-    totalPrice:''
+    totalPrice: ''
   },
 
   /**
@@ -75,32 +76,46 @@ Page({
     }
     
   },
-  goToPay () {
+  goToPay (e) {
+    let a = JSON.stringify(this.data.totalPrice);
     wx.showModal({
       title: '提示',
       content: '确定要购买这个火车票吗？',
-      success: (res)=>{
-        wx.showToast({
-          title: '购买成功',
-          icon: 'sucess',
-          duration: 1000
-        })
-        setTimeout(() => {
-          wx.navigateTo({
-            url: '/pages/trainbuy/trainbuy',
-            success: function (res) {
-              // success
-            },
-            fail: function () {
-              // fail
-            },
-            complete: function () {
-              // complete
-            }
-          })
-        }, 1000);
-        
-      }})
+      success:(res)=> {
+        wx.setStorageSync('totalPrice', this.data.totalPrice);
+        var trainedList = app.globalData.trainedList;
+        var trainItem = {
+          from: this.data.from, 
+          to: this.data.to,  
+          trainNum: this.data.trainNum,
+          trainTime: this.data.trainTime,
+          totalPrice: this.data.totalPrice
+        };
+        trainedList.push(trainItem);
+        if (res.confirm) {
+          setTimeout(() => {
+            wx.navigateTo({
+              url: '/pages/paySuccess/paySuccess',
+              success: function (res) {
+                // success
+              },
+              fail: function () {
+                // fail
+              },
+              complete: function () {
+                // complete
+              }
+            })
+          }, 1000);
+          
+        } else if (res.cancel) {
+          console.log('取消支付');
+          
+        }
+      }
+    })
+    
+    wx.setStorage('key', 'value')
     
   },
 

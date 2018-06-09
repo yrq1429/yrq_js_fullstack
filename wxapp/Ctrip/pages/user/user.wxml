@@ -25,9 +25,9 @@
             <image src="/image/fly-min.png" />
             <text class="title">机票</text>
         </view>
-        <view class="orders-car">
+        <view class="orders-car" bindtap="trainEd">
             <image src="/image/car-min.png" />
-            <text class="title">火车/汽车票</text>
+            <text class="title" >火车/汽车票</text>
         </view>
         <view class="orders-view">
             <image src="/image/view-min.png" />

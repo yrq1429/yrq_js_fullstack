@@ -1,0 +1,77 @@
+page {
+    background-color: #06a0dc;
+}
+.trainPayedContent {
+    height: 200rpx;
+    background-color: #fff;
+    margin: 20rpx;
+    border-radius: 10rpx;
+    position: relative;
+}
+.priceContent {
+    position: absolute;
+    top: 35rpx;
+    right: 20rpx;
+    padding-right: 30rpx;
+}
+.priceContent .price {
+    font-size: 40rpx;
+    color: #fda75e;
+    font-weight: bold;
+}
+.priceContent .payStatus {
+    font-size: 30rpx;
+    color: #adadad;
+    letter-spacing: 1px;
+}
+.fromTo {
+    display: flex;
+    width: 400rpx;
+    height: 60rpx;
+    padding-top: 40rpx;
+    padding-left: 20rpx;
+}
+.from {
+    flex: 1;
+    font-size: 30rpx;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.to {
+    flex: 1;
+    font-size: 30rpx;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.toLogo {
+    flex: 1;
+}
+.fromTo .toLogo image {
+    width: 80rpx;
+    height: 40rpx;
+    padding-left: 30rpx;
+}
+.trainNum {
+    font-size: 30rpx;
+    color: #979797;
+    padding-left: 20rpx;
+    float: left;
+}
+.seatContent {
+    width: 350rpx;
+    height: 50rpx;
+}
+.seatNum {
+    font-size: 30rpx;
+    color: #979797;
+    padding-left: 20rpx;
+    float: right;
+}
+.date {
+    font-size: 30rpx;
+    color: red;
+    padding-left: 20rpx;
+}
+

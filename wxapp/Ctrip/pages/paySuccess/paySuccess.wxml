@@ -1,0 +1,11 @@
+<view class="paySuccessContent">
+    <view class="header">
+        <view class="paySucessIcon">
+            <image src="/image/paySuccess.png" />
+        </view>
+        <view class="paySuccessText">支付成功</view>
+    </view>
+    <view class="successPriceText">携程旅行</view>
+    <view class="successPrice">￥{{totalPrice}}</view>
+    <view class="successBtn" bindtap="navTo">完成</view>
+</view>

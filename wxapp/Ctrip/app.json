@@ -1,15 +1,16 @@
 {
   "pages": [
-    "pages/trainbuy/trainbuy",
     "pages/index/index",
     "pages/user/user",
     "pages/logs/logs",
     "pages/login/login",
     "pages/flybuy/flybuy",
-    
     "pages/busBuy/busBuy",
+    "pages/trainbuy/trainbuy",
     "pages/trainBuyContent/trainBuyContent",
-    "pages/trainPay/trainPay"
+    "pages/trainPay/trainPay",
+    "pages/trainPayed/trainPayed",
+    "pages/paySuccess/paySuccess"
   ],
   "window": {
     "backgroundTextStyle": "light",
