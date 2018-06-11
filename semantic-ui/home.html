@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./home.css">
+    <title>Document</title>
+</head>
+<body class="pushable">
+    <div class="ui large top fixed menu transition hidden">
+        <div class="ui container">
+            <a href="#" class="active item">Home</a>
+            <a href="#" class="item">Work</a>
+            <a href="#" class="item">Company</a>
+            <a href="#" class="item">Careers</a>
+            <div class="right menu">
+                <div class="item"><a href="#" class="ui button">Login in</a></div>
+                <div class="item"><a href="#" class="ui button">Sign Up</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical inverted sidebar menu">
+        <a href="#" class="item">Home</a>
+        <a href="#" class="item">Work</a>
+        <a href="#" class="item">Company</a>
+        <a href="#" class="item">Careers</a>
+        <a href="#" class="item">Login</a>
+        <a href="#" class="item">Signup</a>
+    </div>
+    <div class="pusher">
+        <div class="ui inverted vertical masthead center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a href="#" class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a href="#" class="item active">Home</a>
+                    <a href="#" class="item">Work</a>
+                    <a href="#" class="item">Company</a>
+                    <a href="#" class="item">Careers</a>
+                    <div class="right item">
+                        <a href="#" class="ui inverted button">Login</a>
+                        <a href="#" class="ui inverted button">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui vertical strip segment">
+            <div class="ui middle aligned stackable grid container">
+                <div class="row">
+                    <div class="eight wide column">
+                        <h3 class="ui header">
+                            We Help Companies and Companions
+                        </h3>
+                        <p>
+                             We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower
+                            your needs…through pure data analytics.
+                        </p>
+                        <h3 class="ui header">
+                            We Make Bananas That Can Dance
+                        </h3>
+                        <p>
+                             Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+                        </p>
+                    </div>
+                    <div class="six wide right floated column">
+                        <img src="http://www.semantic-ui.cn/examples/assets/images/wireframe/white-image.png" alt="" class="ui large bordered rounded image">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center aligned column">
+                        <a href="#" class="ui huge button">Check Them Out</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="eight wide column">
+                        <h3 class="ui header">
+                            We Help Companies and Companions
+                        </h3>
+                        <p>
+                            We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower
+                            your needs…through pure data analytics.
+                        </p>
+                        <h3 class="ui header">
+                            We Make Bananas That Can Dance
+                        </h3>
+                        <p>
+                            Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+                        </p>
+                    </div>
+                    <div class="six wide right floated column">
+                        <img src="http://www.semantic-ui.cn/examples/assets/images/wireframe/white-image.png" alt="" class="ui large bordered rounded image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable inverted divided equal height grid">
+                    <div class="three wide column">
+                        <h4 class="ui inverted header">About</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">Sitemap</a>
+                            <a href="#" class="item">Contact</a>
+                            <a href="#" class="item">Religious Ceremonies</a>
+                            <a href="#" class="item">Gazebo Plans</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header">About</h4>
+                        <div class="ui inverted link list">
+                            <a href="#" class="item">Sitemap</a>
+                            <a href="#" class="item">Contact</a>
+                            <a href="#" class="item">Religious Ceremonies</a>
+                            <a href="#" class="item">Gazebo Plans</a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header">Footer Header</h4>
+                        <p>
+                             Extra space for a call to action inside the footer that could help re-engage users.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://www.semantic-ui.cn/examples/assets/library/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    })
+            })
+    </script>
+</body>
+</html>
