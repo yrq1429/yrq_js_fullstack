@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue 是mvvm   
+    data-binding数据绑定  template模板  compile编译 
+    -->
+    <!-- 支持对{{}}的解析，template 的 compile编译、template -> HTML -->
+
+    <!-- {{key}} data {name: 'abc'} 回填 
+        1 打坑    2.回填
+        利用正则表达式
+    -->
+    <div id="app">
+        <h3>姓名</h3>
+        <p>我的名字是{{name}}</p>
+        <h3>年龄</h3>
+        <p>{{age}}</p>
+        <div class="msg">
+            <p>{{msg}}</p>
+        </div>
+    </div>
+</body>
+<script>
+    class Vue {
+        constructor (opt) {
+            this.opt = opt;
+            this.root = document.querySelector(this.opt.el);
+            this.compile(this.root);
+        }
+        compile (node) {
+            // {{.*}}
+            // 遍历结点，文本结点
+            // console.log(node.childNodes);
+            [].forEach.call(node.childNodes, child => {
+                // console.log(child.innerHTML);
+                // 只有有{{}}的东西才需要去做，正则表达式
+                // if (child.innerHTML == '{{name}}') {
+                //     child.innerHTML = this.opt.data.name
+                // }
+                console.log(child);
+                
+                // console.log(child.firstElementChild);
+                if (!child.firstElementChild && /\{\{(.*)\}\}/.test(child.innerHTML)) {
+                    // ()分组
+                    // console.log(RegExp.$1);
+                    // 子节点下面有没有孙结点，第一个子节点
+                    let key = RegExp.$1.trim();  //严谨性
+                    // console.log(key);
+                    child.innerHTML = child.innerHTML.replace(/\{\{(.*)\}\}/, this.opt.data[key]);  //key是变量需要[]包裹
+                    
+                } else if (child.firstElementChild) {
+                    this.compile(child)   //递归
+                }
+            })
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        // 快一点，先编译{{}} 否则会显示在页面上
+        let options = {
+            el: '#app',
+            data: {
+                name: '检索中...',
+                age: 30,
+                msg: 'vue 高手，月薪5万'
+            }
+        }
+        new Vue(options)
+    });
+    
+</script>
+</html>
