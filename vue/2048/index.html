@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="layout">
+            <header>
+                <span class="scort">总分：{{score}}</span>
+                <button class="star" @click="init">New Game</button>
+                <span class="sd"></span>
+            </header>
+            <div class="all-container">
+                <!-- 底色格子 -->
+                <div class="background">
+                    <span class="list-0-0"></span>
+                    <span class="list-0-1"></span>
+                    <span class="list-0-2"></span>
+                    <span class="list-0-3"></span>
+                    <span class="list-1-0"></span>
+                    <span class="list-1-1"></span>
+                    <span class="list-1-2"></span>
+                    <span class="list-1-3"></span>
+                    <span class="list-2-0"></span>
+                    <span class="list-2-1"></span>
+                    <span class="list-2-2"></span>
+                    <span class="list-2-3"></span>
+                    <span class="list-3-0"></span>
+                    <span class="list-3-1"></span>
+                    <span class="list-3-2"></span>
+                    <span class="list-3-3"></span>
+                </div>
+                <!-- rock container absoulte -->
+                <div class="container">
+                    <span class="list" v-for="(rock, i) in rocks" :key="i">
+                        <span class="inner">{{rock.num}}</span>
+                    </span>
+                    <!-- <span class="list"><span class="inner">2</span></span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            score: 0,
+            rocks: []
+        },
+        methods: {
+            init(){
+                this.rocks.push({
+                    num:2
+                })
+            }
+        },
+        mounted() {
+            this.init()
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.layout {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.layout header {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-around;
+}
+.layout header span {
+  width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout header button {
+  outline: none;
+  border: none;
+  background: #8f7a66;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.layout .all-container {
+  height: 620px;
+  width: 620px;
+}
+.layout .all-container .background {
+  box-sizing: content-box;
+  background-color: #bbada0;
+  display: inline-flex;
+  flex: 0 0 600px;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 600px;
+  position: absolute;
+  z-index: -1;
+}
+.layout .all-container .background > span {
+  background-color: rgba(238,228,218,0.349);
+  margin: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+}
+.layout .all-container .container {
+  z-index: 0;
+  position: absolute;
+  padding: 10px;
+  width: 620px;
+  height: 620px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.layout .all-container .container .list {
+  margin: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  position: absolute;
+  font-size: 55px;
+  font-weight: bold;
+}
+.layout .all-container .container .list .inner {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+}
+@media screen and (max-width: 900px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+  .layout {
+    overflow: hidden;
+  }
+  .layout header span {
+    width: 70px;
+  }
+  .layout header button {
+    padding: 10px 15px;
+  }
+  .layout .all-container {
+    margin: 2vw;
+    width: 96vw;
+    height: 96vw;
+  }
+  .layout .all-container .background,
+  .layout .all-container .container {
+    width: 96vw;
+    height: 96vw;
+    box-sizing: border-box;
+    padding: 1vw;
+  }
+  .layout .all-container .background > span,
+  .layout .all-container .container > span,
+  .layout .all-container .background .list,
+  .layout .all-container .container .list {
+    width: 21vw;
+    height: 21vw;
+    margin: 1vw;
+    font-size: 8vw;
+  }
+}
