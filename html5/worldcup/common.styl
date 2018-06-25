@@ -10,8 +10,8 @@ a
     color #fff
     font-size 12px
 body
-    background-color #0E0E5B
-    background-image url('http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png') center 0 no-repeat 
+    // background-color #0E0E5B
+    background #0E0E5B url(http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png) center 0  no-repeat
     background-size: 1920px 403px 
 .container
     width 100%
@@ -27,31 +27,60 @@ body
     height 720px
     background url(//img.alicdn.com/tfs/TB1lNBryTtYBeNjy1XdXXXXyVXa-3840-1440.png) center 0 no-repeat
     background-size 1920px 720px
-.contentSwiper
-    width 100%
-    height 180px
-    position absolute
-    top 0
-    background-image url(http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png)
-    z-index -999
+   
 .container .headSwiper
     width 1300px 
-    height 450px
-    background-color #0E0E5B
+    height 353px
+    // background-color #eee
     margin 0 auto
+    box-shadow 0 0 0 #fff
+    margin-top 200px
+.headSwiper:before
+    content ''
+    width 100%
+    height 480px
+    position absolute
+    top 0
+    background-image url('http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png') center 0 no-repeat
     
 .container .headSwiper .swiperContent
-    width 1100px 
-    height 350px
-    margin 0 auto
-    margin-top 180px
-    margin-left 100px
-    margin-bottom 100px
-    z-index 1
-    overflow-x hidden
-.swiperContent li
-    width 174px
-    float left
+    width 1300px 
+    height 255px
+    padding-bottom 45px
+    // background-color red
+    .swiper-img
+        width 1190px
+        height 310px
+        position relative
+        overflow hidden
+        margin 0 auto
+        min-height 310px
+        .trueContent
+            position relative
+            height 310px
+            // background-color #eeeeee
+            // .imgContent
+            //     width 1190px
+            //     height 310px
+            //     .img1
+            //         // display inline-block
+            //         width 300px
+            //         height 70px
+            //         img 
+            //             width 300px
+            //             height 224px
+            //     .img2
+            //         display inline-block
+            //         width 530px
+            //         height 100px
+            //         opacity 1
+            //         position absolute
+            //         left 230px
+            //         z-index 1
+            //         margin-top 85px
+            //         img 
+            //             width 640px
+            //             height 270px
 .container .headSwiper:before
     content: ''
     background: url(//img.alicdn.com/tfs/TB1ohKsywmTBuNjy1XbXXaMrVXa-820-144.png) center 0 no-repeat

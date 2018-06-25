@@ -16,8 +16,7 @@ a {
   font-size: 12px;
 }
 body {
-  background-color: #0e0e5b;
-  background-image: url("http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png") center 0 no-repeat;
+  background: #0e0e5b url("http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png") center 0 no-repeat;
   background-size: 1920px 403px;
 }
 .container {
@@ -36,33 +35,37 @@ body {
   background: url("//img.alicdn.com/tfs/TB1lNBryTtYBeNjy1XdXXXXyVXa-3840-1440.png") center 0 no-repeat;
   background-size: 1920px 720px;
 }
-.contentSwiper {
-  width: 100%;
-  height: 180px;
-  position: absolute;
-  top: 0;
-  background-image: url("http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png");
-  z-index: -999;
-}
 .container .headSwiper {
   width: 1300px;
-  height: 450px;
-  background-color: #0e0e5b;
+  height: 353px;
   margin: 0 auto;
+  box-shadow: 0 0 0 #fff;
+  margin-top: 200px;
+}
+.headSwiper:before {
+  content: '';
+  width: 100%;
+  height: 480px;
+  position: absolute;
+  top: 0;
+  background-image: url("http://img.alicdn.com/tfs/TB1x4VVwKuSBuNjy1XcXXcYjFXa-1920-403.png") center 0 no-repeat;
 }
 .container .headSwiper .swiperContent {
-  width: 1100px;
-  height: 350px;
-  margin: 0 auto;
-  margin-top: 180px;
-  margin-left: 100px;
-  margin-bottom: 100px;
-  z-index: 1;
-  overflow-x: hidden;
+  width: 1300px;
+  height: 255px;
+  padding-bottom: 45px;
 }
-.swiperContent li {
-  width: 174px;
-  float: left;
+.container .headSwiper .swiperContent .swiper-img {
+  width: 1190px;
+  height: 310px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  min-height: 310px;
+}
+.container .headSwiper .swiperContent .swiper-img .trueContent {
+  position: relative;
+  height: 310px;
 }
 .container .headSwiper:before {
   content: '';
