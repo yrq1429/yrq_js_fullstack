@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fluffy.html">fluffy</a></li>
+            <li><a href="socks.html">socks</a></li>
+            <li><a href="wishers.html">wishers</a></li>
+        </ul>
+        <p class="content">
+             Welcome to Kittens! Home of Fluffy, Socks, and Whiskers. If you're not suffering from a cute overdose within the hour, then
+            you really are a heartless bugger! Now lets look at some cats!
+        </p>
+        <div class="media">
+            <img class="photo" src="http://www.ichong123.com/uploads/2014/08/30108029.snap_.jpg" alt="Fluffy!">
+
+        </div>
+    </div>
+    <script>
+        // 只有一个页面  本质还是多个 每个页面 变成一个状态  在SPA状态为状态生成一个history
+        // history  浏览器的历史  route 路由 状态对应的数据 堆栈 
+        $(function () {
+            // 冒泡注册事件
+            $(document).on('click', 'a', (event) => {
+                event.preventDefault();
+                const url = event.target.href;
+                console.log(url);
+                const req =  $.ajax(url);
+                req.done(data => {
+                    let state = createState($(data));
+                    displayContent(state);
+                    history.pushState(state, state.title, url)
+                })
+            })
+            function createState(node) {
+                let state = {
+                    content: node.find('.content').text(),
+                    photo: node.find('.photo').attr('src'),
+                    title: node.find('title').text()
+                };
+                return state;
+            }
+            function displayContent(state) {
+                $('.content').text(state.content)
+                $('.photo').attr('src', state.photo)
+            }
+        })
+        window.onpopstate = (event) => {
+            if (event.state) {
+                displayContent(event.state)
+            }
+        }
+    </script>
+</body>
+</html>
