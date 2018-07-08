@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       * {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+       }
+       .container {
+           width: 900px;
+           height: 200px;
+           margin: 0 auto;
+       }
+       .left-aside {
+           width: 16.666666%;
+           height: 100%;
+           float: left;
+           background-color: green;
+       }
+       .right-aside {
+           width: 16.666666%;
+           height: 100%;
+           float: right;
+           background-color: blue;
+       }
+       .content {
+           width: 66.666666%;
+           height: 100%;
+           float: left;
+           background-color: pink;
+       }
+       .content .box {
+           float: left;
+           width: 25%;
+           height: 50%;
+           border-right: 1px solid red;
+           border-bottom: 1px solid red;
+       }
+       .box:nth-child(2n-1) {
+           background-color: yellow;
+       }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left-aside"></div>
+    <div class="right-aside"></div>
+    <div class="content">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="bigbox"></div>
+    </div>
+</div>
+
+</body>
+</html>
