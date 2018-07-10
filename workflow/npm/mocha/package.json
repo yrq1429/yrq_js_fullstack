@@ -1,0 +1,21 @@
+{
+  "name": "mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:js": "eslint *.js",
+    "mocha": "mocha tests/",
+    "test": "npm-run-all --parallel lint:js mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.3",
+    "test": "^0.6.0"
+  }
+}
