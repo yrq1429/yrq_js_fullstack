@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box active huge_box">
+
+    </div>
+    <!-- <script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.min.js"></script> -->
+    <script>
+        var box = document.querySelector('.box');
+        // console.log(box.classList.contains("active"));//js原生api判断是否有哪个类名
+        //    console.log($('.box').hasClass("active"));
+        // var c = box.classList;
+        // for (let index = 0; index < c.length; index++) { 
+        //     console.log(document.getElementsByTagName('div')[index].className.indexOf('active') > -1);
+        // }
+
+        // 三种情况：开头，结尾，中间即左右有空格
+    const strClass = document.querySelector('.box').className;
+    const cls = 'active';
+    //    正则表达式以^开始，以$结束,等同于：'(^cls|\\s)' + cls + '(\\s|cls$)'
+    // 以cls开始,以cls结束
+    const reg = new RegExp('(^|\\s)' + cls + '(\\s|$)')
+    console.log(reg.test(strClass));
+       
+    function hasClass(ele, cls) {
+        const reg = new RegExp('(^|\\s)' + cls + '(\\s|$)');
+        return reg.test(ele.className);
+    }
+    function removeClass(ele, cls) {
+        
+    }
+    </script>
+</body>
+</html>
