@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex a{
+            flex: 1;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box flex">
+        <a href="#!a">A</a>
+        <a href="#!b">B</a>
+        <a href="#!c">C</a>
+    </div>
+    <div class="msg">
+
+    </div>
+</body>
+<script>
+    window.addEventListener('hashchange', () => {
+        let tag = location.hash;
+        if (!tag)  return false;
+        
+        tag = tag.replace('#!', '');
+        const file = `${tag}.json`;
+        fetchData(file);
+    }, false)
+    function fetchData(file) {
+        fetch(file)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+           document.querySelector('.msg').innerHTML = JSON.stringify(data)
+            })
+    }
+</script>
+</html>
