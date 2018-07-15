@@ -107,7 +107,7 @@
     },
     methods: {
       selectMenu(index, event) {
-        console.log("aaa");
+        console.log(index);
         console.log(event._constructed);
         if (!event._constructed) {
           return;
@@ -117,7 +117,7 @@
         this.foodsScroll.scrollToElement(el, 300);
       },
       selectFood(food, event) {
-        console.log(food);
+        console.log(event);
         
         if (!event._constructed) {
           return;
