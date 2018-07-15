@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高阶模板字符串网页的使用</title>
+</head>
+
+<body>
+    <script>
+        // 字符串模板  深层？   js数据与html灵与肉的结合
+        // 字符串模板的嵌套
+        //.join 实现数组连接用‘’连接
+        // let arr = [
+        //     { value: 1 },
+        //     { value: 2 }
+        // ];
+        // let message = `
+        // <ul>
+        //     ${arr.map((item) => {
+        //         return `
+        //             <li>${item.value}</li>
+        //         `
+        //     }).join('')} 
+        // </ul>
+        // `;
+        // console.log(message);
+
+        // 欢迎的模板
+        let x = `Dasiy`;
+        let y = `kevin`;
+        // 标签模板功能  online
+        let message = oneline`
+            Hi,
+            ${x},
+            I am
+            ${y}.
+        `;
+        console.log(message);
+        
+        function oneline(template, ...expressions) {
+            //  es6 数组函数式函数 map 新生成一个数组
+            // reduce 将数组减员 遍历数组每一项，跟之前一项进行一个什么操作(...)
+            // 数组只有一项  经常用于将一个数组和
+            let result = template.reduce((prev, next, i) => {
+                let expression =expressions[i-1];
+                // console.log(prev, next, i,expression);
+                return prev + expression + next;
+            });
+            // \n换行\s空格   行首所有空格
+            result = result.replace(/(\n\s*)/g, " ");
+            result = result.trim();
+            return result;
+        }
+        // 
+        //正则
+        // 多行字符串， 如何去除空格，删除换行 => 找到换行、空格，替成空格
+        // 让多行文本变到一行去，trim去空格
+    
+    </script>
+</body>
+
+</html>
