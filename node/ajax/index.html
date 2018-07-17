@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>axios</title>
+</head>
+<body>
+    <div class="info">
+        <p class="username"></p>
+        <p class="desc"></p>
+    </div>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <script>
+        axios
+            .get('/info')
+            .then(data => {
+                console.log(data);
+                document.querySelector('.desc').innerHTML = data.data.desc;
+                document.querySelector('.username').innerHTML = data.data.name;
+            })
+    </script>
+</body>
+</html>
