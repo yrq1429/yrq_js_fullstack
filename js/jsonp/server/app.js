@@ -10,7 +10,7 @@ router.get('/api', (ctx) => {
   if (callback) {
   ctx.body = callback + '(' + JSON.stringify(data) + ')';    
   }else {
-    ctx.body = body
+    ctx.body = body;
   }
 })
 app.use(router.routes());
