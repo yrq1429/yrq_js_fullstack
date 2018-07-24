@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    // fetch('http://localhost:3000/api')
+    //   .then(data => {
+    //     console.log(data)
+    //   })   
+  </script> 这样会报错  存在跨域问题-->
+  <!-- 
+    jsonp  利用了script标签可以访问外部跨域脚本或者地址
+    改造一下后端接口  让他实现jsonp (json with padding)
+    返回的数据  data封装   callback(data)
+  -->
+  <script>
+    function ajax(params) {
+      params = params || {};
+      params.data = params.data || {};
+
+      var json = params.jsonp ? jsonp(params) : json(params);
+
+      function jsonp(params) {
+        
+      }
+      function json(params) {
+        params.type = (params.type || 'GET').toUpperCase();
+        params.data = formatParams(params.data)
+        var xhr = null;
+        if (window.XMLHttpRequest) {
+          xhr = new XMLHttpRequest();
+        } else {
+          xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            var status = xhr.status;
+            if (status >= 200 && status <300) {
+              var response = JSON.parse(xhr.responseText);
+              params.success && params.success(response);
+            }
+          } else {
+            params.error && params.error(status);
+          }
+        }
+
+        if (params.type == 'GET') {
+          xhr.open(params.type, params.url + '?' + params.data, true);
+          xhr.send(null);
+        } else {
+          xhr.open(params.type, params.url, true);
+          xhr.sentRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+          xhr.send(params.data)
+        }
+      }
+      function formatParams (data) {
+        var arr = [];
+        for (var name in data) {
+          arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+        }
+        // 同一个ajax请求，浏览器会缓存
+        arr.push('v=' + random());
+        return arr.join('&')
+      }
+      function random () {
+        return Math.floor(Math.random()*10000 + 500)
+      }
+    }
+    ajax({
+      url: '/data.json',
+      data: {
+        name: '曾凯'
+      },
+      success: (data) => { console.log(data) },
+      error: (err) => { console.log(err) }
+    })
+  </script>
+  <script>
+    function callback(data) {
+      console.log(data);
+    }
+  </script>
+  <script src="http://localhost:3000/api?jsonpcallback=callback">
+     
+  </script>
+
+</body>
+</html>
