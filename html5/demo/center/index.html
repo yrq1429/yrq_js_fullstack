@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>不定宽高的DIV居中	</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .box{
+    width: 200px;
+    height: 400px;
+    background-color: red;
+    display: flex; 
+    justify-content: center; /*水平居中*/
+    align-items: center  /* 垂直居中*/
+    /* position: relative; */
+  }
+  .box1{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    /* position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50% */
+    /* margin: 0 auto; */
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="box1"></div>
+  </div>
+</body>
+</html>
