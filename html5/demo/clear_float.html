@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>清除浮动</title>
+</head>
+<!-- <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .topDiv {
+    width: 500px;
+    border: 2px solid black;
+}
+.floatDiv {
+    width: 100px;
+    height: 100px;
+    border: 2px dotted red;
+    color: red;
+    margin: 4px;
+    float: left;
+} 
+.bottomDiv {
+    width: 500px;
+    height: 100px;
+    margin: 5px 0;
+    border: 2px dotted black;
+}
+.textDiv {
+    color: blue;
+    border: 2px solid blue;
+    clear: left;
+}
+
+</style> -->
+<style>
+  .aside {
+            width: 100px;
+            height: 150px;
+            float: left;
+            background: #f66;
+        }
+        .main {
+            height: 200px;
+            overflow: hidden;
+            background: #fcc;
+        }
+           .text{
+            width: 500px;
+    }
+</style>
+<body>
+  <!-- <div class="topDiv">
+    <div class="floatDiv">float left</div>
+    <div class="textDiv">在讲清除浮动的方法之前，我们先来了解一下为什么要清除浮动，清除浮动的目的是什么，即，要解决什么样的问题。来看一个浮动的例子(略去了文字内容)：在讲清除浮动的方法之前，我们先来了解一下为什么要清除浮动，清除浮动的目的是什么，即，要解决什么样的问题。来看一个浮动的例子(略去了文字内容)：</div>
+</div>
+<div class="bottomDiv">在讲清除浮动的方法之前，我们先来了解一下为什么要清除浮动，清除浮动的目的是什么，即，要解决什么样的问题。来看一个浮动的例子(略去了文字内容)：</div> -->
+<div class="aside"></div>
+<div class="text">
+    <div class="main"></div>
+</div>
+<!--下面是css代码-->
+ 
+</body>
+</html>
