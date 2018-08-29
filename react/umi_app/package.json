@@ -1,0 +1,15 @@
+{
+  "name": "umi_app",
+  "version": "1.0.0",
+  "description": "1. 极快 内置了react react-router 以约定替代，简化代码pages/组件即路由",
+  "main": ".umirc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-sticky": "^6.0.3"
+  }
+}

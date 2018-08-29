@@ -1,0 +1,1 @@
+1. 极快 内置了react react-router 以约定替代，简化代码pages/组件即路由
